@@ -1,6 +1,6 @@
 <template>
   <div class="miniprogram-container">
-    Home
+    Home zzc
   </div>
 </template>
 
