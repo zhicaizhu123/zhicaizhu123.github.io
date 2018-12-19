@@ -16,21 +16,7 @@ module.exports = {
       },
       { text: 'Github', link: 'https://github.com/zhicaizhu123/' },
     ],
-    sidebar: {
-      '/android/': [
-        "",
-        "android1",
-      ],
-      "/ios/": [
-        "",
-        "ios1",
-      ],
-      "/web/": [
-        "",
-        "web1",
-      ],
-    },
+    sidebar: [],
     sidebarDepth: 2,
-    lastUpdated: 'Last Updated',
   },
 }
