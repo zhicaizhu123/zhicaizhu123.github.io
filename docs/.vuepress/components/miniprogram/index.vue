@@ -1,6 +1,6 @@
 <template>
   <div class="miniprogram-container">
-    hello vuepress miniprogram
+    hello vuepress miniprogram, nice!
   </div>
 </template>
 
