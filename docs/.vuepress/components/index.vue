@@ -17,6 +17,12 @@
       border: 1px solid #ddd;
       vertical-align: top;
       margin: 10px;
+      overflow: hidden;
+      transition: all .15s;
+      &:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 5px 16px rgba(0,0,0,.2); 
+      }
       a {
         color: #333;
       }
@@ -26,6 +32,11 @@
         background-color: #ccc;
         @media screen and (max-width: 640px) {
           height: 100px;
+        }
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
         }
       }
       &-content {
@@ -79,19 +90,19 @@ export default {
     return {
       blogList: [
         {
-          cover: '',
+          cover: '/images/miniprogram/cover-miniprogram.jpg',
           title: '破壳学堂小程序开发分享',
           desc: '小程序中遇到的问题和解决方法及技术分享',
           url: '/detail/miniprogram/'
         },
         {
-          cover: '',
+          cover: '/images/git/cover-git.jpg',
           title: 'Git 使用规范',
           desc: '团队开发中，遵循一个合理、清晰的Git使用流程，是非常重要的。',
           url: '/detail/git/',
         },
         {
-          cover: '',
+          cover: '/images/sourcetree/cover-sourcetree.jpg',
           title: 'SourceTree 使用教程',
           desc: 'SourceTree 是 Windows 和Mac OS X 下免费的 Git 和 Hg 客户端，拥有可视化界面，容易上手操作。',
           url: '/detail/sourcetree/'
