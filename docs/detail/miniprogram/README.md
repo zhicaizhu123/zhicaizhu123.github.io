@@ -277,7 +277,7 @@
 - ### <span id="component">Component通用方法和属性封装</span>
   使用 **[behaviors](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/behaviors.html)** 属性引入一个或者多个behavior      
   例如：    
-  ![](https://user-gold-cdn.xitu.io/2018/12/14/167aa7127453651f?w=309&h=501&f=png&s=32459)    
+  <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/14/167aa7127453651f?w=309&h=501&f=png&s=32459">![](https://user-gold-cdn.xitu.io/2018/12/14/167aa7127453651f?w=309&h=501&f=png&s=32459)</a>    
   ``` javascript
   // 单个题目通用方法和属性
   module.exports = Behavior({
@@ -364,13 +364,13 @@
     ```
     - 获取用户信息和授权手机号码（Promise形式，方便在相应页面做不同的逻辑处理），然后在相应需要授权的页面引入   
     首页和题库首页打卡：    
-        ![](https://user-gold-cdn.xitu.io/2018/12/14/167aa793eb0173bb?w=310&h=503&f=png&s=78664)    
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/14/167aa793eb0173bb?w=310&h=503&f=png&s=78664">![](https://user-gold-cdn.xitu.io/2018/12/14/167aa793eb0173bb?w=310&h=503&f=png&s=78664)</a>    
         班型详情分享：    
-        ![](https://user-gold-cdn.xitu.io/2018/12/14/167aa7ad8fa15da3?w=313&h=502&f=png&s=52403)    
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/14/167aa7ad8fa15da3?w=313&h=502&f=png&s=52403">![](https://user-gold-cdn.xitu.io/2018/12/14/167aa7ad8fa15da3?w=313&h=502&f=png&s=52403)</a>    
         获取用户头像信息：  
-        ![](https://user-gold-cdn.xitu.io/2018/12/14/167aa7c7afab14d0?w=313&h=503&f=png&s=30260)    
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/14/167aa7c7afab14d0?w=313&h=503&f=png&s=30260">![](https://user-gold-cdn.xitu.io/2018/12/14/167aa7c7afab14d0?w=313&h=503&f=png&s=30260)</a>    
         选课：  
-        ![](https://user-gold-cdn.xitu.io/2018/12/14/167aa7cea2ad29bb?w=313&h=503&f=png&s=38361)    
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/14/167aa7cea2ad29bb?w=313&h=503&f=png&s=38361">![](https://user-gold-cdn.xitu.io/2018/12/14/167aa7cea2ad29bb?w=313&h=503&f=png&s=38361)</a>    
         ```
         // 授权获取用户信息回调
         export function getUserInfoHandler(res) {

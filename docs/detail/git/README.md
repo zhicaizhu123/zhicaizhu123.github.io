@@ -166,17 +166,17 @@
 
 ## 解决冲突
 - 场景一：两个或多个开发人员修改了同一行代码，git merge合并出现错误如图所示          
-    ![](https://user-gold-cdn.xitu.io/2018/12/20/167ca71b2cff20fe?w=567&h=58&f=png&s=6627)     
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/20/167ca71b2cff20fe?w=567&h=58&f=png&s=6627">![](https://user-gold-cdn.xitu.io/2018/12/20/167ca71b2cff20fe?w=567&h=58&f=png&s=6627)</a>     
     解决办法：  
         与相关的小伙伴协商修改，处理后Git add，git commit, git push
 - 场景二：git push 推送代码到远程库时，远程库最新提交和你试图推送的提交有冲突，其实这个也是相当于把本地库合并到远程库的操作，错误信息如图所示      
-    ![](https://user-gold-cdn.xitu.io/2018/12/20/167ca77274629671?w=573&h=136&f=png&s=17070)    
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/20/167ca77274629671?w=573&h=136&f=png&s=17070">![](https://user-gold-cdn.xitu.io/2018/12/20/167ca77274629671?w=573&h=136&f=png&s=17070)</a>    
     解决办法：  
         先使用git pull origin branch_name（git fetch + git merge） 把最新的代码拉取下来（先获取后合并，所以出现的错误信息和git merge 的一样），解决冲突
-        ![](https://user-gold-cdn.xitu.io/2018/12/20/167ca7aec0119105?w=564&h=177&f=png&s=18904)    
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/20/167ca7aec0119105?w=564&h=177&f=png&s=18904">![](https://user-gold-cdn.xitu.io/2018/12/20/167ca7aec0119105?w=564&h=177&f=png&s=18904)</a>    
         处理后使用git add, git commit, git push再次推送
 - 场景三： 树冲突，文件删除或者重命名，有一个file.js文件，小伙伴A把文件改名为fileA.js，小伙伴B把同一个文件改名为fileB.js，那么小伙伴B将这两个commit合并时，会产生冲突，错误如图所示     
-    ![](https://user-gold-cdn.xitu.io/2018/12/20/167ca875175acd0c?w=570&h=122&f=png&s=17032)    
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/20/167ca875175acd0c?w=570&h=122&f=png&s=17032">![](https://user-gold-cdn.xitu.io/2018/12/20/167ca875175acd0c?w=570&h=122&f=png&s=17032)</a>    
     解决办法： 与小伙伴协商取舍，假如最终确定使用小伙伴B的文件名
     ``` bash 
     # 删除fileA.js
@@ -243,8 +243,8 @@
         ``` bash
         git reset [--hard|soft|mixed|merge|keep] [commit|HEAD]
         ```
-        --hard：重设暂存区和工作区，从<commit>以来在工作区中的任何改变都被丢弃，并把HEAD指向<commit>，彻底回退到某个版本，本地的源码也会变为上一个版本的内容（三思而后行）     
-        --soft： 暂存区和工作区中的内容不作任何改变，仅仅把HEAD指向<commit>，退到某个版本，只回退了commit的信息。如果还要提交，直接commit即可      
+        --hard：重设暂存区和工作区，从`commit`以来在工作区中的任何改变都被丢弃，并把HEAD指向`commit`，彻底回退到某个版本，本地的源码也会变为上一个版本的内容（三思而后行）     
+        --soft： 暂存区和工作区中的内容不作任何改变，仅仅把HEAD指向`commit`，退到某个版本，只回退了commit的信息。如果还要提交，直接commit即可      
         --mixed：仅重设暂存区，但是不重设工作区。这个模式是默认模式。回退到某个版本，只保留源码，回退commit和add信息        
         reset常用示例
         - 回退add操作   
