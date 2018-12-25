@@ -50,7 +50,7 @@
         }
         &__desc {
           color: #888;
-          height: 45px;
+          height: 42px;
           overflow: hidden;
           text-overflow: ellipsis;
           display: -webkit-box;
