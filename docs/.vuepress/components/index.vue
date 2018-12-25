@@ -49,7 +49,7 @@
           font-weight: 500;
         }
         &__desc {
-          color: #777;
+          color: #666;
           height: 45px;
           overflow: hidden;
           text-overflow: ellipsis;
