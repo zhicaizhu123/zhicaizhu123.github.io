@@ -49,8 +49,8 @@
           font-weight: 500;
         }
         &__desc {
-          color: #888;
-          height: 45px;
+          color: #aaa;
+          height: 42px;
           overflow: hidden;
           text-overflow: ellipsis;
           display: -webkit-box;
