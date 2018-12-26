@@ -61,7 +61,7 @@
     git add .
     git commit -m '提交信息说明'
     ```
-    - SourceTree:   
+    - SourceTree：   
     创建并切换到功能分支    
     <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e7ef26e828e5d?w=1352&h=412&f=png&s=121460">![](https://user-gold-cdn.xitu.io/2018/12/26/167e7ef26e828e5d?w=1352&h=412&f=png&s=121460)</a>      
     开发完成后提交到历史版本    
@@ -87,7 +87,7 @@
     // 切换回2018-10-01_version_2.3分支
     git checkout 2018-10-01_version_2.3
     ```
-    - SourceTree:   
+    - SourceTree：   
     切换到dev分支，获取远程最新代码     
     <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e7f2dc5f1a861?w=1157&h=458&f=png&s=110597">![](https://user-gold-cdn.xitu.io/2018/12/26/167e7f2dc5f1a861?w=1157&h=458&f=png&s=110597)</a>      
     合并功能分支代码到dev分支   
@@ -117,7 +117,7 @@
     git checkout 2018-10-01_version_2.3
     ```
     
-    - SourceTree:   
+    - SourceTree：   
     切换到test分支，获取远程最新代码       
     <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e8090831f904c?w=1343&h=494&f=png&s=152238">![](https://user-gold-cdn.xitu.io/2018/12/26/167e8090831f904c?w=1343&h=494&f=png&s=152238)</a>      
     合并功能分支到test分支      
@@ -150,7 +150,7 @@
     git checkout 2018-10-01_version_2.3
     ```
     
-    - SourceTree:     
+    - SourceTree：     
     可以参看上面将功能分支到dev和test分支流程，不过这个步骤添加了打版本tag环节      
     <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e81742581c114?w=1349&h=493&f=png&s=143454">![](https://user-gold-cdn.xitu.io/2018/12/26/167e81742581c114?w=1349&h=493&f=png&s=143454)</a>      
     如果需要将tag推送到远程库可以执行以下操作       
@@ -177,7 +177,7 @@
     // 切换回20181001-crm-2.3分支
     git checkout 2018-10-01_version_2.3_1
     ```
-    - SourceTree:   
+    - SourceTree：   
     可以参看上面将功能分支到pre分支流程      
 <!--## 创建分支-->
 <!--在git里建立分支非常简单-->
@@ -412,7 +412,7 @@ git stash pop
     ``` bash
     git pull origin <branch_name>
     ```
-    SourceTree:     
+    SourceTree：     
     <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e82cc236285f2?w=1365&h=409&f=png&s=127620">![](https://user-gold-cdn.xitu.io/2018/12/26/167e82cc236285f2?w=1365&h=409&f=png&s=127620)</a>      
 - 下班前推送到远程库    
     命令行：   
@@ -422,6 +422,98 @@ git stash pop
     git commit -m '描述说明'
     git push origin <branch_name>
     ```
-    SourceTree:     
+    SourceTree：    
     确定修改已经提交到历史库，然后推送到远程分支    
-    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e82d0c4a5431d?w=1358&h=378&f=png&s=117646">![](https://user-gold-cdn.xitu.io/2018/12/26/167e82d0c4a5431d?w=1358&h=378&f=png&s=117646)</a>
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e82d0c4a5431d?w=1358&h=378&f=png&s=117646">![](https://user-gold-cdn.xitu.io/2018/12/26/167e82d0c4a5431d?w=1358&h=378&f=png&s=117646)</a>      
+
+## 错误提交/合并/推送的挽救方法
+- 场景一： 未将修改内容提交到错误的分支
+    - 命令行：      
+        ``` bash 
+        # 将修改的代码暂存到stash
+        git stash
+        
+        # 切换到正确的分支
+        git checkout <target_branch_name> 
+        
+        # 从stash中取出暂存的代码修改
+        git stash pop
+        
+        # 提交修改
+        git add .
+        git commit -m '提交信息说明'
+        ```
+    
+    - SourceTree：    
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e8640a2c02117?w=1349&h=385&f=png&s=132715">![](https://user-gold-cdn.xitu.io/2018/12/26/167e8640a2c02117?w=1349&h=385&f=png&s=132715)</a>      
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e8664c2712bfd?w=1360&h=653&f=png&s=188496">![](https://user-gold-cdn.xitu.io/2018/12/26/167e8664c2712bfd?w=1360&h=653&f=png&s=188496)</a>      
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e86fcbe520cb8?w=1357&h=446&f=png&s=135996">![](https://user-gold-cdn.xitu.io/2018/12/26/167e86fcbe520cb8?w=1357&h=446&f=png&s=135996)</a>  
+- 场景二： 已将修改内容提交/合并到错误分支， 但未提交到远程库
+    - 命令行：      
+        ``` bash 
+        # 撤销回退修改( 混合合并：仅重设暂存区，但是不重设工作区。这个模式是默认模式。回退到某个版本，只保留源码，回退commit和add信息 )
+        git reset <commitId>
+        
+        # 将修改的代码暂存到stash
+        git stash
+        
+        # 切换到正确的分支
+        git checkout <target_branch_name> 
+        
+        # 从stash中取出暂存的代码修改
+        git stash pop
+        
+        # 提交修改
+        git add .
+        git commit -m '提交信息说明'
+        ```
+    - SourceTree：      
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e86ad291cc2b4?w=1356&h=586&f=png&s=180730">![](https://user-gold-cdn.xitu.io/2018/12/26/167e86ad291cc2b4?w=1356&h=586&f=png&s=180730)</a>      
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e86b696f57289?w=1348&h=321&f=png&s=112959">![](https://user-gold-cdn.xitu.io/2018/12/26/167e86b696f57289?w=1348&h=321&f=png&s=112959)</a>      
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e86c2d6c68e3b?w=1351&h=391&f=png&s=124746">![](https://user-gold-cdn.xitu.io/2018/12/26/167e86c2d6c68e3b?w=1351&h=391&f=png&s=124746)</a>      
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e86e451dce867?w=1366&h=642&f=png&s=189469">![](https://user-gold-cdn.xitu.io/2018/12/26/167e86e451dce867?w=1366&h=642&f=png&s=189469)</a>      
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e86fe2f81c26d?w=1357&h=446&f=png&s=135996">![](https://user-gold-cdn.xitu.io/2018/12/26/167e86fe2f81c26d?w=1357&h=446&f=png&s=135996)</a>      
+- 场景三： 已经修改的内容提交到错误分支的远程库
+    - 命令行：      
+        ``` bash 
+        # 新建一个临时分支保存当前修改状态
+        git checkout -b <temp_branch>
+        
+        # 撤销回退修改
+        git reset <commitId>
+        
+        # 将修改的代码暂存到stash
+        git stash
+        
+        # 切换回错误分支
+        git checkout -b <src_branch_name>
+        
+        # 撤销回退修改
+        git revert <commitId>
+        
+        # 推送到到远程库
+        git push origin <branch_name>
+        
+        # 切换到正确的分支
+        git checkout <target_branch_name>
+        
+        # 从stash中取出暂存的代码修改
+        git stash pop
+        
+        # 合并成功后推送到远程库
+        git push origin <target_branch_name>
+        
+        # 合并成功后删除临时分支
+        git branch -d <temp_branch>
+        ```
+    - SourceTree：      
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e8737316043ae?w=1352&h=434&f=png&s=72886">![](https://user-gold-cdn.xitu.io/2018/12/26/167e8737316043ae?w=1352&h=434&f=png&s=72886)</a>       
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e884a3acf9d2a?w=1348&h=475&f=png&s=159258">![](https://user-gold-cdn.xitu.io/2018/12/26/167e884a3acf9d2a?w=1348&h=475&f=png&s=159258)</a>      
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e884fcd95d1e6?w=1356&h=347&f=png&s=120585">![](https://user-gold-cdn.xitu.io/2018/12/26/167e884fcd95d1e6?w=1356&h=347&f=png&s=120585)</a>      
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e885ad099bc12?w=1352&h=414&f=png&s=131588">![](https://user-gold-cdn.xitu.io/2018/12/26/167e885ad099bc12?w=1352&h=414&f=png&s=131588)</a>      
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e874ee501aa4f?w=1349&h=568&f=png&s=176968">![](https://user-gold-cdn.xitu.io/2018/12/26/167e874ee501aa4f?w=1349&h=568&f=png&s=176968)</a>      
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e8882fa1c31c5?w=1357&h=681&f=png&s=193366">![](https://user-gold-cdn.xitu.io/2018/12/26/167e8882fa1c31c5?w=1357&h=681&f=png&s=193366)</a>      
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e888e7d22a9f8?w=1360&h=506&f=png&s=146960">![](https://user-gold-cdn.xitu.io/2018/12/26/167e888e7d22a9f8?w=1360&h=506&f=png&s=146960)</a>      
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e889a5ff98c08?w=1360&h=506&f=png&s=146960">![](https://user-gold-cdn.xitu.io/2018/12/26/167e889a5ff98c08?w=1360&h=506&f=png&s=146960)</a>      
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e88a22eb7c0fd?w=1338&h=703&f=png&s=186601">![](https://user-gold-cdn.xitu.io/2018/12/26/167e88a22eb7c0fd?w=1338&h=703&f=png&s=186601)</a>      
+        
