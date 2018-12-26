@@ -404,3 +404,24 @@ git stash pop
         git tag -l| awk '/pre_\S*_version_1(\.[0-9]){0,}_\d+$/ {print  $1}' | xargs git tag -d
         ```
 
+## 每天开发前先拉取，每天下班前先上传到中央仓库
+在软件团队中，有一个不成文的习惯，团队成员在每天晚上下班前，先将一天工作内容推送到远程仓库，早上上班时先从中央仓库拉取项目更新。由于项目的每个成员都可以通过版本历史记录查看其它成员的工作内容和项目进展，因此也就形成了团队内部工作透明的机制。
+- 开发前拉取    
+命令行：   
+
+``` bash
+git pull origin <branch_name>
+```
+SourceTree:     
+![](https://user-gold-cdn.xitu.io/2018/12/26/167e82cc236285f2?w=1365&h=409&f=png&s=127620)
+- 下班前推送到远程库    
+命令行：   
+
+``` bash
+git add .
+git commit -m '描述说明'
+git push origin <branch_name>
+```
+SourceTree:     
+确定修改已经提交到历史库，然后推送到远程分支
+![](https://user-gold-cdn.xitu.io/2018/12/26/167e82d0c4a5431d?w=1358&h=378&f=png&s=117646)
