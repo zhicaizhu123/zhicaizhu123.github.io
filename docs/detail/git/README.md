@@ -48,7 +48,7 @@
     ```
     - SourceTree：
     
-    ![](https://user-gold-cdn.xitu.io/2018/12/26/167e7eb6a8f93195?w=903&h=477&f=png&s=78470)
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e7eb6a8f93195?w=903&h=477&f=png&s=78470">![](https://user-gold-cdn.xitu.io/2018/12/26/167e7eb6a8f93195?w=903&h=477&f=png&s=78470)</a>
     
 2. 从master拉取创建feature分支
     - 命令行：    
@@ -63,10 +63,10 @@
     ```
     - SourceTree:   
     创建并切换到功能分支    
-    ![](https://user-gold-cdn.xitu.io/2018/12/26/167e7ef26e828e5d?w=1352&h=412&f=png&s=121460)      
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e7ef26e828e5d?w=1352&h=412&f=png&s=121460">![](https://user-gold-cdn.xitu.io/2018/12/26/167e7ef26e828e5d?w=1352&h=412&f=png&s=121460)</a>      
     开发完成后提交到历史版本    
-    ![](https://user-gold-cdn.xitu.io/2018/12/26/167e7f676b50d620?w=1234&h=396&f=png&s=100036)      
-    ![](https://user-gold-cdn.xitu.io/2018/12/26/167e7f8d1993031e?w=1352&h=672&f=png&s=82698)
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e7f676b50d620?w=1234&h=396&f=png&s=100036">![](https://user-gold-cdn.xitu.io/2018/12/26/167e7f676b50d620?w=1234&h=396&f=png&s=100036)</a>      
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e7f8d1993031e?w=1352&h=672&f=png&s=82698">![](https://user-gold-cdn.xitu.io/2018/12/26/167e7f8d1993031e?w=1352&h=672&f=png&s=82698)</a>
 3. 开发完功能后，合并到开发环境， 合并完后记得切换回个人分支，预防直接修改`dev`分支代码
     - 命令行：
     
@@ -89,13 +89,13 @@
     ```
     - SourceTree:   
     切换到dev分支，获取远程最新代码     
-    ![](https://user-gold-cdn.xitu.io/2018/12/26/167e7f2dc5f1a861?w=1157&h=458&f=png&s=110597)      
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e7f2dc5f1a861?w=1157&h=458&f=png&s=110597">![](https://user-gold-cdn.xitu.io/2018/12/26/167e7f2dc5f1a861?w=1157&h=458&f=png&s=110597)</a>      
     合并功能分支代码到dev分支   
-    ![](https://user-gold-cdn.xitu.io/2018/12/26/167e7fd8825da4c5?w=1343&h=389&f=png&s=123520)      
-    ![](https://user-gold-cdn.xitu.io/2018/12/26/167e8001ac557f80?w=1346&h=685&f=png&s=160175)      
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e7fd8825da4c5?w=1343&h=389&f=png&s=123520">![](https://user-gold-cdn.xitu.io/2018/12/26/167e7fd8825da4c5?w=1343&h=389&f=png&s=123520)</a>      
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e8001ac557f80?w=1346&h=685&f=png&s=160175">![](https://user-gold-cdn.xitu.io/2018/12/26/167e8001ac557f80?w=1346&h=685&f=png&s=160175)</a>      
     如果合并过程中发生冲突，需要解决提交后才进行下一步操作，[冲突解决方案](#解决冲突)       
     推送dev到远程库     
-    ![](https://user-gold-cdn.xitu.io/2018/12/26/167e804c475310a0?w=1350&h=415&f=png&s=127402)      
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e804c475310a0?w=1350&h=415&f=png&s=127402">![](https://user-gold-cdn.xitu.io/2018/12/26/167e804c475310a0?w=1350&h=415&f=png&s=127402)</a>      
     
 4. 开发环境联调测试没有问题后，提交到测试环境，合并完后记得切换回个人分支，预防直接修改`test`分支代码(测试人员介入测试)
     - 命令行：
@@ -118,16 +118,16 @@
     ```
     
     - SourceTree:   
-    切换到test分支，获取远程最新代码    
-    ![](https://user-gold-cdn.xitu.io/2018/12/26/167e8090831f904c?w=1343&h=494&f=png&s=152238)      
-    合并功能分支到test分支
-    ![](https://user-gold-cdn.xitu.io/2018/12/26/167e80ad802a843b?w=1358&h=388&f=png&s=120936)      
-    ![](https://user-gold-cdn.xitu.io/2018/12/26/167e80c99425348d?w=1351&h=689&f=png&s=163342)      
+    切换到test分支，获取远程最新代码       
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e8090831f904c?w=1343&h=494&f=png&s=152238">![](https://user-gold-cdn.xitu.io/2018/12/26/167e8090831f904c?w=1343&h=494&f=png&s=152238)</a>      
+    合并功能分支到test分支      
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e80ad802a843b?w=1358&h=388&f=png&s=120936">![](https://user-gold-cdn.xitu.io/2018/12/26/167e80ad802a843b?w=1358&h=388&f=png&s=120936)</a>      
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e80c99425348d?w=1351&h=689&f=png&s=163342">![](https://user-gold-cdn.xitu.io/2018/12/26/167e80c99425348d?w=1351&h=689&f=png&s=163342)</a>      
     如果合并过程中发生冲突，需要解决提交后才进行下一步操作，[冲突解决方案](#解决冲突)       
-    推送test到远程库
-    ![](https://user-gold-cdn.xitu.io/2018/12/26/167e80f6dba8d68e?w=1403&h=401&f=png&s=128212)
-5. 测试环境测试人员确定没有问题，可以上pre预发布环境，合并完后记得切换回个人分支，预防直接修改`pre`分支代码(测试人员介入测试)
-    命令行：    
+    推送test到远程库        
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e80f6dba8d68e?w=1403&h=401&f=png&s=128212">![](https://user-gold-cdn.xitu.io/2018/12/26/167e80f6dba8d68e?w=1403&h=401&f=png&s=128212)</a>      
+5. 测试环境测试人员确定没有问题，可以上pre预发布环境，合并完后记得切换回个人分支，预防直接修改`pre`分支代码(测试人员介入测试)       
+    - 命令行：    
     
     ``` bash
     // 切换到pre测试环境
@@ -150,12 +150,12 @@
     git checkout 2018-10-01_version_2.3
     ```
     
-    SourceTree:     
+    - SourceTree:     
     可以参看上面将功能分支到dev和test分支流程，不过这个步骤添加了打版本tag环节      
-    ![](https://user-gold-cdn.xitu.io/2018/12/26/167e81742581c114?w=1349&h=493&f=png&s=143454)      
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e81742581c114?w=1349&h=493&f=png&s=143454">![](https://user-gold-cdn.xitu.io/2018/12/26/167e81742581c114?w=1349&h=493&f=png&s=143454)</a>      
     如果需要将tag推送到远程库可以执行以下操作       
-    ![](https://user-gold-cdn.xitu.io/2018/12/26/167e818c8c28acc5?w=1357&h=638&f=png&s=171229)      
-6. 预发布测试没有问题而且接收到测试人员的上线通知邮件，提交到生产环境
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e818c8c28acc5?w=1357&h=638&f=png&s=171229">![](https://user-gold-cdn.xitu.io/2018/12/26/167e818c8c28acc5?w=1357&h=638&f=png&s=171229)</a>      
+6. 预发布测试没有问题而且接收到测试人员的上线通知邮件，提交到生产环境       
     - 命令行：  
     ``` bash
     // 切换到pre测试环境
@@ -218,20 +218,20 @@
 <!--merge和rebase之间的差别是merge会尝试处理改动并建立一个新的混合了两者的提交。rebase会尝试把你从一个分支最后一次分离后的所有改动，一个个加到该分支的HEAD上。不过，在已经将分支推到远端服务器后不要再rebase了-->
 
 ## 解决冲突
-以下操作主要针对通过Git命令行解决冲突，SourceTree解决冲突方案可以参看[SourceTree冲突和解决方式](https://zhicaizhu123.github.io/detail/sourcetree/#%E5%86%B2%E7%AA%81%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F)
+以下操作主要针对通过Git命令行解决冲突，SourceTree解决冲突方案可以参看[SourceTree冲突和解决方式](https://zhicaizhu123.github.io/detail/sourcetree/#%E5%86%B2%E7%AA%81%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F)      
 - 场景一：两个或多个开发人员修改了同一行代码，`git merge`合并出现错误如图所示          
-    ![](https://user-gold-cdn.xitu.io/2018/12/20/167ca71b2cff20fe?w=567&h=58&f=png&s=6627)     
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/20/167ca71b2cff20fe?w=567&h=58&f=png&s=6627">![](https://user-gold-cdn.xitu.io/2018/12/20/167ca71b2cff20fe?w=567&h=58&f=png&s=6627)</a>     
     解决办法：  
         与相关的小伙伴协商修改，处理后`git add`，`git commit`, `git push`
 - 场景二：`git push` 推送代码到远程库时，远程库最新提交和你试图推送的提交有冲突，其实这个也是相当于把本地库合并到远程库的操作，错误信息如图所示      
-    ![](https://user-gold-cdn.xitu.io/2018/12/20/167ca77274629671?w=573&h=136&f=png&s=17070)    
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/20/167ca77274629671?w=573&h=136&f=png&s=17070">![](https://user-gold-cdn.xitu.io/2018/12/20/167ca77274629671?w=573&h=136&f=png&s=17070)</a>    
     解决办法：  
-        先使用`git pull origin branch_name`（git fetch + git merge） 把最新的代码拉取下来（先获取后合并，所以出现的错误信息和`git merge` 的一样），解决冲突
-        ![](https://user-gold-cdn.xitu.io/2018/12/20/167ca7aec0119105?w=564&h=177&f=png&s=18904)    
-        处理后使用`git add`, `git commit`, `git push`再次推送
+        先使用`git pull origin branch_name`（git fetch + git merge）         把最新的代码拉取下来（先获取后合并，所以出现的错误信息和`git merge` 的一样），解决冲突      
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/20/167ca7aec0119105?w=564&h=177&f=png&s=18904">![](https://user-gold-cdn.xitu.io/2018/12/20/167ca7aec0119105?w=564&h=177&f=png&s=18904)</a>    
+        处理后使用`git add`, `git commit`, `git push`再次推送       
 - 场景三： 树冲突，文件删除或者重命名，有一个file.js文件，小伙伴A把文件改名为fileA.js，小伙伴B把同一个文件改名为fileB.js，那么小伙伴B将这两个commit合并时，会产生冲突，错误如图所示     
-    ![](https://user-gold-cdn.xitu.io/2018/12/20/167ca875175acd0c?w=570&h=122&f=png&s=17032)    
-    解决办法： 与小伙伴协商取舍，假如最终确定使用小伙伴B的文件名
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/20/167ca875175acd0c?w=570&h=122&f=png&s=17032">![](https://user-gold-cdn.xitu.io/2018/12/20/167ca875175acd0c?w=570&h=122&f=png&s=17032)</a>    
+    解决办法： 与小伙伴协商取舍，假如最终确定使用小伙伴B的文件名        
     
     ``` bash 
     # 删除fileA.js
@@ -407,21 +407,21 @@ git stash pop
 ## 每天开发前先拉取，每天下班前先上传到中央仓库
 在软件团队中，有一个不成文的习惯，团队成员在每天晚上下班前，先将一天工作内容推送到远程仓库，早上上班时先从中央仓库拉取项目更新。由于项目的每个成员都可以通过版本历史记录查看其它成员的工作内容和项目进展，因此也就形成了团队内部工作透明的机制。
 - 开发前拉取    
-命令行：   
-
-``` bash
-git pull origin <branch_name>
-```
-SourceTree:     
-![](https://user-gold-cdn.xitu.io/2018/12/26/167e82cc236285f2?w=1365&h=409&f=png&s=127620)
+    命令行：   
+    
+    ``` bash
+    git pull origin <branch_name>
+    ```
+    SourceTree:     
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e82cc236285f2?w=1365&h=409&f=png&s=127620">![](https://user-gold-cdn.xitu.io/2018/12/26/167e82cc236285f2?w=1365&h=409&f=png&s=127620)</a>      
 - 下班前推送到远程库    
-命令行：   
-
-``` bash
-git add .
-git commit -m '描述说明'
-git push origin <branch_name>
-```
-SourceTree:     
-确定修改已经提交到历史库，然后推送到远程分支
-![](https://user-gold-cdn.xitu.io/2018/12/26/167e82d0c4a5431d?w=1358&h=378&f=png&s=117646)
+    命令行：   
+    
+    ``` bash
+    git add .
+    git commit -m '描述说明'
+    git push origin <branch_name>
+    ```
+    SourceTree:     
+    确定修改已经提交到历史库，然后推送到远程分支    
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e82d0c4a5431d?w=1358&h=378&f=png&s=117646">![](https://user-gold-cdn.xitu.io/2018/12/26/167e82d0c4a5431d?w=1358&h=378&f=png&s=117646)</a>
