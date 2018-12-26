@@ -11,7 +11,7 @@ module.exports = {
         link: '/'
       },
       {
-        text: '博文',
+        text: '博客',
         link: '/index/'
       },
       { text: 'Github', link: 'https://github.com/zhicaizhu123/' },

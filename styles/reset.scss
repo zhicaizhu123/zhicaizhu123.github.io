@@ -1,0 +1,85 @@
+body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4, h5, h6, i, b, textarea, button, input, select, figure, figcaption {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-style: normal;
+  text-decoration: none;
+  border: none;
+  font-family: "Microsoft Yahei";
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  &:hover {
+    outline: none;
+  }
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="search"],
+input[type="reset"] {
+  -webkit-appearance: none;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #f7fafc inset !important;//关于解决输入框背景颜色
+  -webkit-text-fill-color: #333 !important;//关于接输入框文字颜色
+}
+
+textarea {
+  -webkit-appearance: none;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background: #F3F3F3;
+}
+
+body {
+  background: #f4f4f4;
+  color: #4b4b4b;
+  font: 14px/20px "Microsoft Yahei", 'Hiragino Sans GB', arial, '\5b8b\4f53', sans-serif;
+}
+
+a {
+  outline: none;
+}
+
+::-webkit-input-placeholder,
+:-moz-placeholder,
+:-ms-input-placeholder {
+  color: #afbdcc;
+}
+
+::-webkit-input-placeholder { color: #afbdcc; }
+:-moz-placeholder { color: #afbdcc; }
+::-moz-placeholder { color: #afbdcc; }
+:-ms-input-placeholder { color: #afbdcc; }
+
+::-webkit-scrollbar { width: 6px !important; height: 6px !important; }
+::-webkit-scrollbar-track { background-color: #f5f5f5; }
+::-webkit-scrollbar-track-piece { background-color: #f5f5f5; border-radius: 6px; }
+::-webkit-scrollbar-thumb { background-color:rgba(0,0,0,.5); border-radius: 6px; }
+::-webkit-scrollbar-corner { background-color: #f5f5f5; }
+::-webkit-resizer { background-repeat: no-repeat; background-position: bottom right; }
+
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clearfix {
+  *zoom: 1;
+  &:after, &:before {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+    overflow: hidden;
+  }
+}
