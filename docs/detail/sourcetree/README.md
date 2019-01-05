@@ -61,7 +61,7 @@
     <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e33e3140d9619?w=1351&h=698&f=png&s=169666">![](https://user-gold-cdn.xitu.io/2018/12/25/167e33e3140d9619?w=1351&h=698&f=png&s=169666)</a>      
     检出为本地分支：            
     <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e33d5b14b23d1?w=1341&h=691&f=png&s=172676">![](https://user-gold-cdn.xitu.io/2018/12/25/167e33d5b14b23d1?w=1341&h=691&f=png&s=172676)</a>          
-    如果是远程的环境分支我们一般需要“跟踪远程分支”，方便我们知道远程分支是否已经更新了修改      
+    如果是远程的环境分支一般需要“跟踪远程分支”，方便知道远程分支是否已经更新了修改      
     <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e362966d31f55?w=1349&h=540&f=png&s=138954">![](https://user-gold-cdn.xitu.io/2018/12/25/167e362966d31f55?w=1349&h=540&f=png&s=138954)</a>      
     如果有未推送和未拉取的远程更新，在相应的位置会显示条目      
     <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3654005dd6bb?w=1354&h=480&f=png&s=149542">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3654005dd6bb?w=1354&h=480&f=png&s=149542)</a>      
@@ -73,16 +73,16 @@
     <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e341af21fcbd4?w=1356&h=669&f=png&s=165937">![](https://user-gold-cdn.xitu.io/2018/12/25/167e341af21fcbd4?w=1356&h=669&f=png&s=165937)</a>      
 
 ## 修改和提交分支
-如果我们在feature/fixbug分支新增/删除文件或者修改文件等时，界面会提示你当前有未提交的修改       
+如果在feature/fixbug分支新增/删除文件或者修改文件等时，界面会提示你当前有未提交的修改       
 <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e34b22069fde4?w=1350&h=691&f=png&s=151670">![](https://user-gold-cdn.xitu.io/2018/12/25/167e34b22069fde4?w=1350&h=691&f=png&s=151670)</a>      
-接着我们可以将修改的内容加入暂存区和历史版本    
+接着可以将修改的内容加入暂存区和历史版本    
 <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e34e797e70784?w=1349&h=677&f=png&s=165437">![](https://user-gold-cdn.xitu.io/2018/12/25/167e34e797e70784?w=1349&h=677&f=png&s=165437)</a>      
 <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e34f9629556a2?w=1353&h=666&f=png&s=79239">![](https://user-gold-cdn.xitu.io/2018/12/25/167e34f9629556a2?w=1353&h=666&f=png&s=79239)</a>       
 
 ## 合并分支
-合并分支前，需要拉取先拉取目标分支最新代码到本地分支，例如需要把`2018-10-01_version_2.3`分支合并到`master`分支，我们需要先拉取`master`的远程库的最新代码    
+合并分支前，需要拉取先拉取目标分支最新代码到本地分支，例如需要把`2018-10-01_version_2.3`分支合并到`master`分支，需要先拉取`master`的远程库的最新代码    
 <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3fe5bbf6ffb3?w=1206&h=414&f=png&s=97961">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3fe5bbf6ffb3?w=1206&h=414&f=png&s=97961)</a>       
-合并分支要到目标分支上去操作，比如我们要把分支`2018-10-01_version_2.3`上的修改合并到`master`分支，那么我们就要到`master`分支上去操作。       
+合并分支要到目标分支上去操作，比如要把分支`2018-10-01_version_2.3`上的修改合并到`master`分支，那么就要到`master`分支上去操作。       
 <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3274be0a911b?w=1351&h=386&f=png&s=110652">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3274be0a911b?w=1351&h=386&f=png&s=110652)</a>      
 <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e329a74b43fd8?w=1329&h=574&f=png&s=132538">![](https://user-gold-cdn.xitu.io/2018/12/25/167e329a74b43fd8?w=1329&h=574&f=png&s=132538)</a>      
 - 合并过程发生冲突      
@@ -133,7 +133,7 @@
     选择这种方式解决冲突的情况下，说明你对冲突代码的取舍是明确的。
 - 手动编辑方法解决
     这种方式是在你不能确定是否可以丢弃的另一份代码情况下使用，也是 git 中的合并冲突最灵活的方法。   
-    打开编辑器，一般编辑器都会显示冲突所在的位置，我们和相关小伙伴商量根据需求修改好冲突代码。    
+    打开编辑器，一般编辑器都会显示冲突所在的位置，和相关小伙伴商量根据需求修改好冲突代码。    
     修改前：    
     <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3c77da6cb319?w=999&h=192&f=png&s=26553">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3c77da6cb319?w=999&h=192&f=png&s=26553)</a>
     修改后：    
@@ -152,14 +152,14 @@
         右击文件，然后选择 “解决冲突 -> 重新合并”   
 
 ## 开发中突发紧急任务处理
-如果我们在开发过程中突然接到一个线上bug或者当前项目其他紧急需求，但是我们又不想提交我们当前的修改内容，这个时候我们可以使用贮藏功能，把我们修改的内容贮藏起来，然后切换到其它的分支处理紧急任务，处理完后我们再切换到之前的功能分支，把贮藏的内容重新提取出来，继续开发。      
-如果我们试图在为提交当前分支的修改内容是就切换分支去处理其它任务，会报一下错误
+如果在开发过程中突然接到一个线上bug或者当前项目其他紧急需求，但是又不想提交当前的修改内容，这个时候可以使用贮藏功能，把修改的内容贮藏起来，然后切换到其它的分支处理紧急任务，处理完后再切换到之前的功能分支，把贮藏的内容重新提取出来，继续开发。      
+如果试图在为提交当前分支的修改内容是就切换分支去处理其它任务，会报一下错误
 <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3703236ebab6?w=1331&h=253&f=png&s=27834">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3703236ebab6?w=1331&h=253&f=png&s=27834)</a>         
-所以我们需要先把修改内容贮藏起来
+所以需要先把修改内容贮藏起来
 <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e372eb537fd19?w=1337&h=540&f=png&s=141333">![](https://user-gold-cdn.xitu.io/2018/12/25/167e372eb537fd19?w=1337&h=540&f=png&s=141333)</a>      
-贮藏成功后我们就会在贮藏列表看到我们刚刚贮藏的内容      
+贮藏成功后就会在贮藏列表看到刚刚贮藏的内容      
 <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3741cd3a7aa1?w=1362&h=597&f=png&s=171231">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3741cd3a7aa1?w=1362&h=597&f=png&s=171231)</a>      
-如果我们开发完其它任务后，切换到之前的功能分支，只需要把之前贮藏的内容提取出来就可以继续开发，提取后最好同时删除这次贮藏        
+如果开发完其它任务后，切换到之前的功能分支，只需要把之前贮藏的内容提取出来就可以继续开发，提取后最好同时删除这次贮藏        
 <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3777ae6d4a50?w=1354&h=530&f=png&s=186286">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3777ae6d4a50?w=1354&h=530&f=png&s=186286)</a>      
-应用成功后我们就会在图谱上看到我们之前的未提交更改，同时之前的贮藏也会贮藏列表移除      
+应用成功后就会在图谱上看到之前的未提交更改，同时之前的贮藏也会贮藏列表移除      
 <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e37916cacb003?w=1345&h=496&f=png&s=130965">![](https://user-gold-cdn.xitu.io/2018/12/25/167e37916cacb003?w=1345&h=496&f=png&s=130965)</a>
