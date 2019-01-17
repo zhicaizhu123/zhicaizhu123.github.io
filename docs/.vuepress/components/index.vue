@@ -11,7 +11,7 @@
     .blog-item {
       display: inline-block;
       font-size: 14px;
-      width: 280px;
+      width: 270px;
       max-width: calc(50% - 20px);
       border-radius: 4px;
       border: 1px solid #ddd;
@@ -90,6 +90,12 @@ export default {
     return {
       blogList: [
         {
+          cover: '/images/git/cover-redux.jpg',
+          title: 'Redux 状态管理器',
+          desc: 'Redux对于JavaScript应用而言是一个可预测状态的容器',
+          url: '/detail/redux'
+        },
+        {
           cover: '/images/miniprogram/cover-miniprogram.jpg',
           title: '破壳学堂小程序开发分享',
           desc: '小程序中遇到的问题和解决方法及技术分享',
@@ -106,6 +112,18 @@ export default {
           title: 'SourceTree 使用教程',
           desc: 'SourceTree 是 Windows 和Mac OS X 下免费的 Git 和 Hg 客户端，拥有可视化界面，容易上手操作。',
           url: '/detail/sourcetree/'
+        },
+        {
+          cover: '/images/git/cover-git-short.jpg',
+          title: 'Git 项目使用规范',
+          desc: '团队开发中，遵循一个合理、清晰的Git使用流程，是非常重要的。',
+          url: '/detail/git-rules/'
+        },
+        {
+          cover: '/images/git/cover-resolve.jpg',
+          title: 'Git错误操作和冲突补救方案',
+          desc: '补救Git开发中各种误操作和冲突问题',
+          url: '/detail/resolve/'
         }
       ]
     }

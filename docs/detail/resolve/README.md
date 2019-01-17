@@ -27,35 +27,48 @@
 当 git 不知道如何自动合并某个文件的多处改动的时候，就会引发冲突。       
 一般出现在多人协作中修改了两个或多个开发者修改了同一行代码（编辑冲突）或者对某份代码的几个部分作出了各自的修改的时候 
 #### 解决冲突
-场景一：两个或多个开发人员修改了同一行代码(merge或者pull（fetch + merge）冲突)
-<a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3868982f1c7c?w=1352&h=598&f=png&s=157669">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3868982f1c7c?w=1352&h=598&f=png&s=157669)</a>      
-- 使用 “我的版本” 或 “他人版本” 来解决    
-    这是修复 git 中的合并冲突最简单的方式。右击任意有冲突的文件     
-    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3c5f2bcda53d?w=1046&h=619&f=png&s=141663">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3c5f2bcda53d?w=1046&h=619&f=png&s=141663)</a>
-    选择这种方式解决冲突的情况下，说明你对冲突代码的取舍是明确的。
-- 手动编辑方法解决
-    这种方式是在你不能确定是否可以丢弃的另一份代码情况下使用，也是 git 中的合并冲突最灵活的方法。   
-    打开编辑器，一般编辑器都会显示冲突所在的位置，和相关小伙伴商量根据需求修改好冲突代码。    
-    修改前：    
-    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3c77da6cb319?w=999&h=192&f=png&s=26553">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3c77da6cb319?w=999&h=192&f=png&s=26553)</a>
-    修改后：    
-    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3c85f32ddfec?w=914&h=197&f=png&s=20660">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3c85f32ddfec?w=914&h=197&f=png&s=20660)</a>
-    修改完后回到SourceTree，在 “未暂存文件” 区域里选择冲突的文件。拖到上面的 “已暂存文件” 区域里面。或者也可以右击文件，然后选择 “解决冲突 -> 标记为已解决”。   
-    - 点击“暂存”按钮    
-    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3cb15780c7b5?w=1039&h=546&f=png&s=112640">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3cb15780c7b5?w=1039&h=546&f=png&s=112640)</a>    
-    - 标志为已解决    
-    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3c9c0299fc9b?w=1037&h=559&f=png&s=122466">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3c9c0299fc9b?w=1037&h=559&f=png&s=122466)</a>      
-- 合并过程中失误解决方式  
-    有时候解决冲突，可能误删了一些东西，想恢复到解决冲突之前的状态，有以下解决方式。
-    - 重置所有文件：
-        只要没有提交，就可以从顶部菜单中选择 “丢弃”。然后就可以重新开始分支合并操作，一切都将从头来过。     
-        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/18/167c0cb8e39186a3?w=492&h=193&f=png&s=8966">![](https://user-gold-cdn.xitu.io/2018/12/18/167c0cb8e39186a3?w=492&h=193&f=png&s=8966)</a>
-    - 重置单个文件：
-        右击文件，然后选择 “解决冲突 -> 重新合并”   
+- 场景一：两个或多个开发人员修改了同一行代码(merge或者pull（fetch + merge）冲突)
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3868982f1c7c?w=1352&h=598&f=png&s=157669">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3868982f1c7c?w=1352&h=598&f=png&s=157669)</a>      
+    - 使用 “我的版本” 或 “他人版本” 来解决    
+        这是修复 git 中的合并冲突最简单的方式。右击任意有冲突的文件     
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3c5f2bcda53d?w=1046&h=619&f=png&s=141663">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3c5f2bcda53d?w=1046&h=619&f=png&s=141663)</a>
+        选择这种方式解决冲突的情况下，说明你对冲突代码的取舍是明确的。
+    - 手动编辑方法解决
+        这种方式是在你不能确定是否可以丢弃的另一份代码情况下使用，也是 git 中的合并冲突最灵活的方法。   
+        打开编辑器，一般编辑器都会显示冲突所在的位置，和相关小伙伴商量根据需求修改好冲突代码。    
+        修改前：    
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3c77da6cb319?w=999&h=192&f=png&s=26553">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3c77da6cb319?w=999&h=192&f=png&s=26553)</a>
+        修改后：    
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3c85f32ddfec?w=914&h=197&f=png&s=20660">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3c85f32ddfec?w=914&h=197&f=png&s=20660)</a>
+        修改完后回到SourceTree，在 “未暂存文件” 区域里选择冲突的文件。拖到上面的 “已暂存文件” 区域里面。或者也可以右击文件，然后选择 “解决冲突 -> 标记为已解决”。   
+        - 点击“暂存”按钮    
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3cb15780c7b5?w=1039&h=546&f=png&s=112640">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3cb15780c7b5?w=1039&h=546&f=png&s=112640)</a>    
+        - 标志为已解决    
+        <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3c9c0299fc9b?w=1037&h=559&f=png&s=122466">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3c9c0299fc9b?w=1037&h=559&f=png&s=122466)</a>      
+    - 合并过程中失误解决方式  
+        有时候解决冲突，可能误删了一些东西，想恢复到解决冲突之前的状态，有以下解决方式。
+        - 重置所有文件：
+            只要没有提交，就可以从顶部菜单中选择 “丢弃”。然后就可以重新开始分支合并操作，一切都将从头来过。    
+            <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/18/167c0cb8e39186a3?w=492&h=193&f=png&s=8966">![](https://user-gold-cdn.xitu.io/2018/12/18/167c0cb8e39186a3?w=492&h=193&f=png&s=8966)</a>
+        - 重置单个文件：
+            右击文件，然后选择 “解决冲突 -> 重新合并”   
+    
+          
+- 场景二： 树冲突，文件删除或者重命名，有一个file.js文件，小伙伴A把文件改名为fileA.js，小伙伴B把同一个文件改名为fileB.js，那么小伙伴B将这两个commit合并时，会产生冲突，如图所示   
 
-      
-场景二： 树冲突，文件删除或者重命名，有一个file.js文件，小伙伴A把文件改名为fileA.js，小伙伴B把同一个文件改名为fileB.js，那么小伙伴B将这两个commit合并时，会产生冲突
-
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2019/1/5/1681b7ea1dbcb216?w=1030&h=294&f=png&s=29098">![](https://user-gold-cdn.xitu.io/2019/1/5/1681b7ea1dbcb216?w=1030&h=294&f=png&s=29098)</a>     
+    解决办法： 与小伙伴协商取舍，假如最终确定使用小伙伴B的文件名fileB.js        
+    1. 删除file.js 和 fileA.js文件      
+    
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2019/1/5/1681b821327eb028?w=1146&h=601&f=png&s=110881">![](https://user-gold-cdn.xitu.io/2019/1/5/1681b821327eb028?w=1146&h=601&f=png&s=110881)</a>        
+    
+    2. 添加fileB.js 到暂缓区        
+    
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2019/1/5/1681b831b3c4762b?w=1129&h=553&f=png&s=104500">![](https://user-gold-cdn.xitu.io/2019/1/5/1681b831b3c4762b?w=1129&h=553&f=png&s=104500)</a>        
+    3. 提交推送     
+    
+    <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2019/1/5/1681b847bcb44ef9?w=1350&h=676&f=png&s=81577">![](https://user-gold-cdn.xitu.io/2019/1/5/1681b847bcb44ef9?w=1350&h=676&f=png&s=81577)</a>
+    4. 小伙伴A拉取最新代码      
 
 ## 减少代码冲突的措施
 - 容易产生冲突的操作方式

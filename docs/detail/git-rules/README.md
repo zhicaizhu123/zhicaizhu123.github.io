@@ -1,6 +1,6 @@
-# Git 使用规范     
+# Git 项目使用规范     
 > 本文主要针对Git多人协作       
-> 本文结合SourceTree一起使用，SourceTree使用可以参看[《SourceTree使用教程》](https://zhicaizhu123.github.io/detail/sourcetree/)   
+> 本文结合SourceTree一起使用，SourceTree使用可以参看[《SourceTree使用教程》](http://wiki.tzdtz.com/pages/viewpage.action?pageId=3835694)   
 
 ## 准备工作
 - Git版本管理工具 ([下载地址](https://git-scm.com/downloads))       
@@ -58,7 +58,7 @@
   合并功能分支代码到`dev`分支   
   <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e7fd8825da4c5?w=1343&h=389&f=png&s=123520">![](https://user-gold-cdn.xitu.io/2018/12/26/167e7fd8825da4c5?w=1343&h=389&f=png&s=123520)</a>      
   <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e8001ac557f80?w=1346&h=685&f=png&s=160175">![](https://user-gold-cdn.xitu.io/2018/12/26/167e8001ac557f80?w=1346&h=685&f=png&s=160175)</a>      
-  如果合并过程中发生冲突，需要解决提交后才进行下一步操作，[冲突解决方案](#解决冲突)       
+  如果合并过程中发生冲突，需要解决提交后才进行下一步操作       
   推送`dev`到远程库     
   <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e804c475310a0?w=1350&h=415&f=png&s=127402">![](https://user-gold-cdn.xitu.io/2018/12/26/167e804c475310a0?w=1350&h=415&f=png&s=127402)</a>      
     
@@ -68,16 +68,16 @@
   合并功能分支到`test`分支      
   <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e80ad802a843b?w=1358&h=388&f=png&s=120936">![](https://user-gold-cdn.xitu.io/2018/12/26/167e80ad802a843b?w=1358&h=388&f=png&s=120936)</a>      
   <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e80c99425348d?w=1351&h=689&f=png&s=163342">![](https://user-gold-cdn.xitu.io/2018/12/26/167e80c99425348d?w=1351&h=689&f=png&s=163342)</a>      
-  如果合并过程中发生冲突，需要解决提交后才进行下一步操作，[冲突解决方案](#解决冲突)       
+  如果合并过程中发生冲突，需要解决提交后才进行下一步操作       
   推送`test`到远程库        
   <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e80f6dba8d68e?w=1403&h=401&f=png&s=128212">![](https://user-gold-cdn.xitu.io/2018/12/26/167e80f6dba8d68e?w=1403&h=401&f=png&s=128212)</a>      
-5. 测试环境测试人员确定没有问题，可以上pre预发布环境，合并完后记得切换回个人分支，预防直接修改`pre`分支代码(测试人员介入测试)           
+5. 如果是个人开发，不是多人协作可以忽略这一步，直接执行下一步。测试环境测试人员确定没有问题，可以上pre预发布环境，合并完后记得切换回个人分支，预防直接修改`pre`分支代码(测试人员介入测试)           
   可以参看上面将功能分支到`dev`和`test`分支流程，不过这个步骤添加了打版本tag环节      
   <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e81742581c114?w=1349&h=493&f=png&s=143454">![](https://user-gold-cdn.xitu.io/2018/12/26/167e81742581c114?w=1349&h=493&f=png&s=143454)</a>      
   如果需要将tag推送到远程库可以执行以下操作       
   <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e818c8c28acc5?w=1357&h=638&f=png&s=171229">![](https://user-gold-cdn.xitu.io/2018/12/26/167e818c8c28acc5?w=1357&h=638&f=png&s=171229)</a>      
 6. 预发布测试没有问题而且接收到测试人员的上线通知邮件，提交到生产环境        
-  可以参看上面`pre`分支操作将`feature`功能分支到`master`分支流程      
+  可以参看上面`pre`分支操作将`feature`功能分支到`master`分支流程，如果是多人协作可以      
 
 ## 保留分支及tag数规则
 - 保留分支的规则：  
@@ -116,3 +116,17 @@
 - 下班前推送到远程库        
     确定修改已经提交到历史库，然后推送到远程分支    
     <a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/26/167e82d0c4a5431d?w=1358&h=378&f=png&s=117646">![](https://user-gold-cdn.xitu.io/2018/12/26/167e82d0c4a5431d?w=1358&h=378&f=png&s=117646)</a>      
+
+
+## 开发中突发紧急任务处理
+如果在开发过程中突然接到一个线上bug或者当前项目其他紧急需求，但是又不想提交当前的修改内容，这个时候可以使用贮藏功能，把修改的内容贮藏起来，然后切换到其它的分支处理紧急任务，处理完后再切换到之前的功能分支，把贮藏的内容重新提取出来，继续开发。      
+如果试图在为提交当前分支的修改内容是就切换分支去处理其它任务，会报一下错误
+<a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3703236ebab6?w=1331&h=253&f=png&s=27834">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3703236ebab6?w=1331&h=253&f=png&s=27834)</a>         
+所以需要先把修改内容贮藏起来
+<a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e372eb537fd19?w=1337&h=540&f=png&s=141333">![](https://user-gold-cdn.xitu.io/2018/12/25/167e372eb537fd19?w=1337&h=540&f=png&s=141333)</a>      
+贮藏成功后就会在贮藏列表看到刚刚贮藏的内容      
+<a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3741cd3a7aa1?w=1362&h=597&f=png&s=171231">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3741cd3a7aa1?w=1362&h=597&f=png&s=171231)</a>      
+如果开发完其它任务后，切换到之前的功能分支，只需要把之前贮藏的内容提取出来就可以继续开发，提取后最好同时删除这次贮藏        
+<a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e3777ae6d4a50?w=1354&h=530&f=png&s=186286">![](https://user-gold-cdn.xitu.io/2018/12/25/167e3777ae6d4a50?w=1354&h=530&f=png&s=186286)</a>      
+应用成功后就会在图谱上看到之前的未提交更改，同时之前的贮藏也会贮藏列表移除      
+<a data-fancybox title="" href="https://user-gold-cdn.xitu.io/2018/12/25/167e37916cacb003?w=1345&h=496&f=png&s=130965">![](https://user-gold-cdn.xitu.io/2018/12/25/167e37916cacb003?w=1345&h=496&f=png&s=130965)</a>
