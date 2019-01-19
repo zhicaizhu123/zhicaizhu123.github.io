@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>前端使用nginx反向代理 | PeterCoder</title>
+    <meta name="description" content="积累学习的一点一滴">
+    <link rel="icon" href="/img/logo.ico">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.css">
+    
+    <link rel="preload" href="/assets/css/0.styles.e8c3154e.css" as="style"><link rel="preload" href="/assets/js/app.a9c24781.js" as="script"><link rel="preload" href="/assets/js/9.a7c30cb8.js" as="script"><link rel="prefetch" href="/assets/js/10.b2c7f379.js"><link rel="prefetch" href="/assets/js/11.907747eb.js"><link rel="prefetch" href="/assets/js/12.a4f7d24e.js"><link rel="prefetch" href="/assets/js/13.558135bc.js"><link rel="prefetch" href="/assets/js/14.019a8e71.js"><link rel="prefetch" href="/assets/js/2.aa37ee98.js"><link rel="prefetch" href="/assets/js/3.c9261fa5.js"><link rel="prefetch" href="/assets/js/4.d4eceaac.js"><link rel="prefetch" href="/assets/js/5.185a991d.js"><link rel="prefetch" href="/assets/js/6.5dba1ff2.js"><link rel="prefetch" href="/assets/js/7.ad009bf5.js"><link rel="prefetch" href="/assets/js/8.c97dd12f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e8c3154e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">PeterCoder</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/index/" class="nav-link">博客</a></div><div class="nav-item"><a href="https://github.com/zhicaizhu123/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/index/" class="nav-link">博客</a></div><div class="nav-item"><a href="https://github.com/zhicaizhu123/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <!----> </div> <div class="page"> <div class="content"><h1 id="前端使用nginx反向代理"><a href="#前端使用nginx反向代理" aria-hidden="true" class="header-anchor">#</a> 前端使用nginx反向代理</h1> <h2 id="nginx-安装"><a href="#nginx-安装" aria-hidden="true" class="header-anchor">#</a> nginx 安装</h2> <p><a href="http://nginx.org/" target="_blank" rel="noopener noreferrer">下载地址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="nginx-server-配置结构"><a href="#nginx-server-配置结构" aria-hidden="true" class="header-anchor">#</a> nginx server 配置结构</h2> <div class="language- extra-class"><pre class="language-text"><code>server {
+    # http协议为80， https协议为443
+    listen       80; 
+    
+    # 假如当前服务的域名是 xxx.com
+    # 同时需要在host文件里添加 127.0.0.1 xxx.com 配置项
+    server_name  xxx.com;
+    
+    # 通用匹配
+    location / {
+        # 假如端口号为9001
+        proxy_pass http://127.0.0.1:9001;
+    }
+    
+    # 添加访问目录为 /api 的代理配置
+    location /api { 
+        # serverip 为接口服务器ip
+    	proxy_pass   http://serverip;
+    	# onlinehost 为线上域名
+    	proxy_set_header Host onlinehost.com;
+   }
+    ...
+}
+</code></pre></div><h2 id="server-配置项"><a href="#server-配置项" aria-hidden="true" class="header-anchor">#</a> server 配置项</h2> <h3 id="server-name"><a href="#server-name" aria-hidden="true" class="header-anchor">#</a> server_name</h3> <p>由于IP地址的数量有限，因此经常存在多个主机域名对应同一个ip的情况，这个时候可以按照server_name通过server块来定义虚拟主机，每个server块是一个虚拟主机，处理满足相应listen端口</p> <h3 id="location"><a href="#location" aria-hidden="true" class="header-anchor">#</a> location</h3> <blockquote><p>location会尝试根据用户请求中的URI来匹配设置的表达式  并选中最终结果中的配置来处理用户的请求</p></blockquote> <ul><li><p><strong>语法规则location [=|~|~*|^~|@] / uri / { … }</strong></p> <ul><li>/ 通用匹配，任何请求都会匹配到。</li> <li>= 表示把uri作为字符串，与参数中的URI作完全匹配</li> <li>^~ 表示匹配URI的时候，如果该location是最佳匹配，那么对于匹配这个location的字符串不在进行正则表达式的匹配检测</li> <li>~ 进行正则表达式匹配的时候，区分大小写</li> <li>~* 进行正则表达式匹配的时候，不区分大小写</li> <li>!~和!~*分别为区分大小写不匹配及不区分大小写不匹配 的正则</li></ul></li> <li><p><strong>匹配优先级：</strong><br>
+首先匹配 =，其次匹配 ^~, 其次是按文件中顺序的正则匹配，最后是交给 / 通用匹配。当有匹配成功时候，停止匹配，按当前匹配规则处理请求。</p></li> <li><p><strong>示例代码：</strong></p> <div class="language- extra-class"><pre class="language-text"><code># 规则A
+location = /guide.html {  
+    ...
+}  
+
+# 规则B
+location ^~ /static/ {  
+    ...  
+}  
+
+# 规则C
+location ~ \.(gif|jpg|png|js|css)$ {  
+    ... 
+}  
+
+# 规则D
+location ~* \.png$ {  
+    ...  
+}  
+
+# 规则E
+location !~ \.html$ {  
+    ...  
+}  
+
+# 规则F
+location / {  
+    ...  
+}  
+</code></pre></div><p>匹配结果：<br>
+http://xxx.com/guide.html =&gt; 匹配规则A<br>
+http://xxx.com/static/logo.png =&gt; 匹配规则B<br>
+http://xxx.com/logo.png =&gt; 匹配规则C和规则D， 但是优先匹配规则C，规则D不起作用<br>
+http://xxx.com/logo.PNG =&gt; 匹配规则D ，因为D不区分大小写，C区分大小写<br>
+http://xxx.com/test.html =&gt; 符合匹配规则E但是不会匹配到，规则E属于排除法，比较少用<br>
+http://xxx.com/homework/ =&gt; 匹配规则F，因为前面的规则都不匹配</p></li></ul> <h2 id="使用ssl模块配置支持https访问"><a href="#使用ssl模块配置支持https访问" aria-hidden="true" class="header-anchor">#</a> 使用ssl模块配置支持HTTPS访问</h2> <ul><li><p>安装openssl<br> <a href="http://slproweb.com/products/Win32OpenSSL.html" target="_blank" rel="noopener noreferrer">window openssl下载地址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></li> <li><p>配置OpenSSL环境变量<br>
+系统变量PATH字段后面拼接openssl执行文件目录<code>D:\path\to\OpenSSL-Win64\bin</code></p></li> <li><p>生成证书</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 1.创建服务器私钥，命令会让你输入一个口令</span>
+openssl genrsa -des3 -out server.key 1024  <span class="token comment"># 生成私钥</span>
+
+<span class="token comment"># 2.创建签名请求的证书（CSR）</span>
+openssl req -new -key server.key -out server.csr  <span class="token comment"># 生成证书颁发机构,用于颁发公钥</span>
+
+<span class="token comment"># 3.在加载SSL支持的Nginx并使用上述私钥时除去必须的口令</span>
+<span class="token function">cp</span> server.key server.key.org
+openssl rsa -in server.key.org -out server.key  <span class="token comment"># 除去密码以便reload询问时不需要密码</span>
+
+<span class="token comment"># 4.标记证书使用上述私钥和CSR</span>
+openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+
+</code></pre></div><p>最终生成一下文件</p> <p><a data-fancybox title href="https://user-gold-cdn.xitu.io/2019/1/19/168641b14f8fbf0b?w=625&h=106&f=png&s=12163"><img src="https://user-gold-cdn.xitu.io/2019/1/19/168641b14f8fbf0b?w=625&h=106&f=png&s=12163" alt></a></p></li> <li><p>修改nginx配置文件</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># http协议为80， https协议为443</span>
+listen       443 ssl<span class="token punctuation">;</span>  <span class="token comment"># 修改为443 ssl</span>
+<span class="token comment"># ssl on;</span>
+
+<span class="token comment"># 假如当前服务的域名是 xxx.com</span>
+<span class="token comment"># 同时需要在host文件里添加 127.0.0.1 xxx.com 配置项</span>
+server_name  xxx.com<span class="token punctuation">;</span>
+
+<span class="token comment"># 新增 start</span>
+ssl_certificate      path\to\server.crt<span class="token punctuation">;</span> <span class="token comment"># 使用openssl生成的证书位置</span>
+ssl_certificate_key  path\to\server.key<span class="token punctuation">;</span> <span class="token comment"># 使用openssl生成的私钥位置</span>
+ssl_session_timeout  5m<span class="token punctuation">;</span>
+ssl_protocols  SSLv2 SSLv3 TLSv1<span class="token punctuation">;</span>  <span class="token comment"># 指定密码为openssl支持的格式 </span>
+ssl_ciphers  HIGH:<span class="token operator">!</span>aNULL:<span class="token operator">!</span>MD5<span class="token punctuation">;</span>  <span class="token comment"># 密码加密方式</span>
+ssl_prefer_server_ciphers   on<span class="token punctuation">;</span>  <span class="token comment"># 依赖SSLv3和TLSv1协议的服务器密码将优先于客户端密码</span>
+<span class="token comment"># 新增 end</span>
+
+<span class="token comment"># 通用匹配</span>
+location / <span class="token punctuation">{</span>
+    <span class="token comment"># 假如端口号为9001</span>
+    proxy_pass http://127.0.0.1:9001<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># 添加访问目录为 /api 的代理配置</span>
+location /api <span class="token punctuation">{</span> 
+    <span class="token comment"># serverip 为接口服务器ip，注意使用https协议</span>
+	proxy_pass   https://serverip<span class="token punctuation">;</span>
+	<span class="token comment"># onlinehost 为线上域名</span>
+	proxy_set_header Host onlinehost.com<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">..</span>.
+</code></pre></div></li></ul></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.a9c24781.js" defer></script><script src="/assets/js/9.a7c30cb8.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Redux 状态管理器 | PeterCoder</title>
+    <meta name="description" content="积累学习的一点一滴">
+    <link rel="icon" href="/img/logo.ico">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.css">
+    
+    <link rel="preload" href="/assets/css/0.styles.e8c3154e.css" as="style"><link rel="preload" href="/assets/js/app.a9c24781.js" as="script"><link rel="preload" href="/assets/js/10.b2c7f379.js" as="script"><link rel="prefetch" href="/assets/js/11.907747eb.js"><link rel="prefetch" href="/assets/js/12.a4f7d24e.js"><link rel="prefetch" href="/assets/js/13.558135bc.js"><link rel="prefetch" href="/assets/js/14.019a8e71.js"><link rel="prefetch" href="/assets/js/2.aa37ee98.js"><link rel="prefetch" href="/assets/js/3.c9261fa5.js"><link rel="prefetch" href="/assets/js/4.d4eceaac.js"><link rel="prefetch" href="/assets/js/5.185a991d.js"><link rel="prefetch" href="/assets/js/6.5dba1ff2.js"><link rel="prefetch" href="/assets/js/7.ad009bf5.js"><link rel="prefetch" href="/assets/js/8.c97dd12f.js"><link rel="prefetch" href="/assets/js/9.a7c30cb8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e8c3154e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">PeterCoder</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/index/" class="nav-link">博客</a></div><div class="nav-item"><a href="https://github.com/zhicaizhu123/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/index/" class="nav-link">博客</a></div><div class="nav-item"><a href="https://github.com/zhicaizhu123/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <!----> </div> <div class="page"> <div class="content"><h1 id="redux-状态管理器"><a href="#redux-状态管理器" aria-hidden="true" class="header-anchor">#</a> Redux 状态管理器</h1> <h2 id="redux-三大原则"><a href="#redux-三大原则" aria-hidden="true" class="header-anchor">#</a> Redux 三大原则</h2> <ul><li><strong>唯一数据源</strong><br>
+Redux只维护一个全局的状态对象，存储在Redux的store中，唯一数据源是编译监控任意时刻的应用状态和调试应用，减少出错的可能性。</li> <li><strong>保持应用状态只读</strong><br>
+在任何情况都不能直接修改应用状态，当需要修改时，必须通过发送一个action，描述应用状态如何修改，这在大型项目中保证状态管理有序进行。</li> <li><strong>应用状态的改变通过纯函数完成</strong><br>
+action只是表明应用状态如何修改，但是执行修改的是reducer，reducer是一个纯函数，接收到action，reducer不能直接修改应用状态，而是创建一个新的状态对象。</li></ul> <h2 id="主要组成"><a href="#主要组成" aria-hidden="true" class="header-anchor">#</a> 主要组成</h2> <ul><li><p><strong>action</strong><br>
+action 是Redux中的信息载体，是store唯一的数据来源。<br>
+如果需要修改应用状态需要发送一个action，action描述应用状态state如何修改，其实action只是一个普通的Javascript对象，对象结构不限制，但是必须由type字段，type一般定义为字符串常量。<br>
+action一般通过action creator创建，action creator是返回action的函数，如：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">createAction</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token string">'ADD_DATA'</span><span class="token punctuation">,</span>
+        text<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li> <li><p><strong>reducer</strong><br>
+action是描述应用状态如何改变，reducer根据action做出响应，应该如何修改应用状态state，所以应该在编写reducer前，设计好state。reducer签名如下：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token punctuation">(</span>prevState<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> newState
+</code></pre></div><p>常见一个最基本的reducer，如：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> initState <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+<span class="token keyword">function</span> <span class="token function">dataList</span><span class="token punctuation">(</span>state <span class="token operator">=</span> initState<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">switch</span><span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token string">'ADD_DATA'</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token punctuation">[</span> <span class="token operator">...</span>state<span class="token punctuation">,</span> action<span class="token punctuation">.</span>text <span class="token punctuation">]</span>
+        <span class="token operator">...</span>
+        <span class="token keyword">default</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> state
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>多个reducer，如下：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">dataList</span><span class="token punctuation">(</span>state <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">switch</span><span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token string">'ADD_DATA'</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token punctuation">[</span> <span class="token operator">...</span>state<span class="token punctuation">,</span> action<span class="token punctuation">.</span>text <span class="token punctuation">]</span>
+        <span class="token operator">...</span>
+        <span class="token keyword">default</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> state
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">userInfo</span><span class="token punctuation">(</span>state <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">switch</span><span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token string">'UPDATE_USER'</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token operator">...</span>state<span class="token punctuation">,</span> action<span class="token punctuation">.</span>data <span class="token punctuation">}</span>
+        <span class="token operator">...</span>
+        <span class="token keyword">default</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> state
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">appReducer</span><span class="token punctuation">(</span>state <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        dataList<span class="token punctuation">:</span> <span class="token function">dataList</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>dataList<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        userInfo<span class="token punctuation">:</span> <span class="token function">userInfo</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>userInfo<span class="token punctuation">,</span> action<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>当应用比较复杂时，可以拆分多个reducer到独立的文件。</p> <p><strong>使用Redux的combineReducers来合并多个reducer</strong></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> combineReducers <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'redux'</span>
+<span class="token keyword">const</span> appReducer <span class="token operator">=</span> <span class="token function">combineReducers</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    dataList<span class="token punctuation">,</span>
+    userInfo<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// 等价于</span>
+<span class="token keyword">function</span> <span class="token function">appReducer</span><span class="token punctuation">(</span>state <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        dataList<span class="token punctuation">:</span> <span class="token function">dataList</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>dataList<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        userInfo<span class="token punctuation">:</span> <span class="token function">userInfo</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>userInfo<span class="token punctuation">,</span> action<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 或</span>
+
+<span class="token keyword">const</span> appReducer <span class="token operator">=</span> <span class="token function">combineReducers</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    dataList<span class="token punctuation">:</span> dataListReducer<span class="token punctuation">,</span>
+    userInfo<span class="token punctuation">:</span> userInfoReducer<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// 等价于</span>
+<span class="token keyword">function</span> <span class="token function">appReducer</span><span class="token punctuation">(</span>state <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        dataList<span class="token punctuation">:</span> <span class="token function">dataListReducer</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>dataList<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        userInfo<span class="token punctuation">:</span> <span class="token function">dataListReducer</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>userInfo<span class="token punctuation">,</span> action<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>CombineReducers传递给每个reducer的state中的属性取决于它的参数对象的key值。</p></li> <li><p><strong>store</strong><br>
+store主要负责4个工作：</p> <ul><li>保存应用状态。</li> <li>通过getState()访问应用状态。</li> <li>通过dispatch(action)发送更新状态的视图（action是描述应用状态如何修改）。</li> <li>通过subscribe(listener)注册监听函数、监听应用状态的改变。</li></ul> <p>一个Redux应用只有一个store，store保存了唯一数据源，store通过Redux的createStore方法创建，创建时需要传入reducer作为参数。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> createStore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'redux'</span>
+<span class="token keyword">import</span> appReducer <span class="token keyword">from</span> <span class="token string">'./reducers'</span>
+
+<span class="token comment">// 初始化应用状态</span>
+<span class="token comment">// 对照上面的reducer各自初始化的状态合并就是</span>
+<span class="token comment">// {</span>
+<span class="token comment">//      dataList: [],   </span>
+<span class="token comment">//      userInfo: {},</span>
+<span class="token comment">// }</span>
+<span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span>reducers<span class="token punctuation">,</span> initState<span class="token punctuation">)</span>
+<span class="token comment">// 或初始化应用状态</span>
+<span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span>reducers<span class="token punctuation">)</span>
+</code></pre></div><p>创建后可以通过getState()获取当前应用状态。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> state <span class="token operator">=</span> store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>当需要修改应用状态是可以使用dispatch(action)进行修改。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 定义dataList 的 action</span>
+<span class="token keyword">function</span> <span class="token function">createDataListAction</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token string">'ADD_DATA'</span><span class="token punctuation">,</span>
+        text<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 定义userInfo的action</span>
+<span class="token keyword">function</span> <span class="token function">createUserInfoAction</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token string">'UPDATE_USER'</span><span class="token punctuation">,</span>
+        data<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 发送更改dataList的action</span>
+store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">createDataListAction</span><span class="token punctuation">(</span><span class="token string">'hello world'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 发送更改userInfo的action</span>
+<span class="token keyword">const</span> userInfo <span class="token operator">=</span> <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    username<span class="token punctuation">:</span> <span class="token string">'zzc'</span><span class="token punctuation">,</span> 
+    email<span class="token punctuation">:</span> <span class="token string">'zhicaizhu123@126.com'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">createUserInfoAction</span><span class="token punctuation">(</span>userInfo<span class="token punctuation">)</span>
+</code></pre></div><p>当dataList和userInfo这两个reducer根据action完成了应用状态的修改后，可以通过getState()获取更新后的应用状态，为了可以精确的知道应用状态是什么时候更新的，我们可以使用subscribe(listener)来判断应用状态是否已经更新。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 监听应用状态是否更新</span>
+<span class="token keyword">const</span> unsubscribe <span class="token operator">=</span> store<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 当需要取消监听的时候</span>
+<span class="token function">unsubscribe</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li></ul></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.a9c24781.js" defer></script><script src="/assets/js/10.b2c7f379.js" defer></script>
+  </body>
+</html>

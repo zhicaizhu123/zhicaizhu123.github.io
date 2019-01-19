@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Git 使用规范 | PeterCoder</title>
+    <meta name="description" content="积累学习的一点一滴">
+    <link rel="icon" href="/img/logo.ico">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.css">
+    
+    <link rel="preload" href="/assets/css/0.styles.e8c3154e.css" as="style"><link rel="preload" href="/assets/js/app.a9c24781.js" as="script"><link rel="preload" href="/assets/js/7.ad009bf5.js" as="script"><link rel="prefetch" href="/assets/js/10.b2c7f379.js"><link rel="prefetch" href="/assets/js/11.907747eb.js"><link rel="prefetch" href="/assets/js/12.a4f7d24e.js"><link rel="prefetch" href="/assets/js/13.558135bc.js"><link rel="prefetch" href="/assets/js/14.019a8e71.js"><link rel="prefetch" href="/assets/js/2.aa37ee98.js"><link rel="prefetch" href="/assets/js/3.c9261fa5.js"><link rel="prefetch" href="/assets/js/4.d4eceaac.js"><link rel="prefetch" href="/assets/js/5.185a991d.js"><link rel="prefetch" href="/assets/js/6.5dba1ff2.js"><link rel="prefetch" href="/assets/js/8.c97dd12f.js"><link rel="prefetch" href="/assets/js/9.a7c30cb8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e8c3154e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">PeterCoder</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/index/" class="nav-link">博客</a></div><div class="nav-item"><a href="https://github.com/zhicaizhu123/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/index/" class="nav-link">博客</a></div><div class="nav-item"><a href="https://github.com/zhicaizhu123/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <!----> </div> <div class="page"> <div class="content"><h1 id="git-使用规范"><a href="#git-使用规范" aria-hidden="true" class="header-anchor">#</a> Git 使用规范</h1> <blockquote><p>本文只针对广研Git的的使用规范，不对Git的命令操作做具体介绍，如果想深入使用Git的命令操作可以自行学习。<br>
+本文主要针对Git多人协作<br>
+本文结合SourceTree一起使用，SourceTree使用可以参看<a href="https://zhicaizhu123.github.io/detail/sourcetree/" target="_blank" rel="noopener noreferrer">《SourceTree使用教程》<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></blockquote> <h2 id="代码发布流程"><a href="#代码发布流程" aria-hidden="true" class="header-anchor">#</a> 代码发布流程</h2> <ul><li>发布开发及测试环境
+<ul><li>将需求代码合并到对应环境分支中，并提交到远端</li> <li>发布开发环境，则登录http://tzdtz.com:8080/</li> <li>发布测试环境，则登录http://jenkins.tzdtz.com/ （<a href>jenkins使用教程</a>）</li> <li>选择对应项目进行发布</li> <li>jenkins将自动拉取git中对应分支的代码进行发布</li></ul></li> <li>发布预发布环境（多人协作）及正式环境
+<ul><li>将需求代码合并到对应环境分支中，并提交到远端</li> <li>打版本tag，并以&quot;prefix_YYYY-MM-DD_version_X.X_index&quot;格式命名，如&quot;pre_2018-07-12_version_1.0_1&quot;（如果当天同一版本多次发布数，index依次递增，那么tag命名依次为&quot;pre_2018-07-12_version_1.0_1&quot;，&quot;pre_2018-07-12_version_1.0_2&quot;， &quot;pre_2018-07-12_version_1.0_3&quot;， ...）</li> <li>将tag提交到远程</li> <li>登录http://jenkins.tzdtz.com/ （<a href>jenkins使用教程</a>）</li> <li>找到对应项目，选择想要发布的tag进行发布</li></ul></li></ul> <h2 id="分支说明"><a href="#分支说明" aria-hidden="true" class="header-anchor">#</a> 分支说明</h2> <ul><li><code>master</code> 生产环境分支：</li> <li><code>fixbug</code> 生产环境紧急bug处理分支：<br>
+这个分支用来做生产环境bug紧急修复，它来自<code>master</code>分支；<br>
+fixbug分支命名规则：&quot;YYYY-MM-DD_fixbug_bugname&quot;，如： &quot;2018-10-01_fixbug_arrange_course&quot;。</li> <li><code>pre</code> 预发布环境分支（多人协作）</li> <li><code>test</code> 测试环境分支</li> <li><code>dev</code> 开发环境分支</li> <li><code>feature</code> 功能分支：<br>
+feature分支命名规则: &quot;YYYY-MM-DD_version_X.X&quot;，如：&quot;2018-10-01_version_2.3&quot;。</li></ul> <p><strong>注意：</strong></p> <ul><li><code>master</code>，<code>pre</code>, <code>test</code>， <code>dev</code>只能从feature和fixbug分支合并</li> <li>切勿在<code>master</code>， <code>pre</code>， <code>test</code>， <code>dev</code>分支直接修改代码，修改代码需要在feature或fixbug分支修改</li> <li>环境分支只能被合并，即添加新代码，不能合并到其他分支，即不可迁出代码，防止代码污染</li> <li>需求上线后，将代码合并到<code>master</code>分支，并删除远端和本地端的新建的feature分支和fixbug分支</li></ul> <h2 id="feature分支和fixbug分支及tag命名规范"><a href="#feature分支和fixbug分支及tag命名规范" aria-hidden="true" class="header-anchor">#</a> feature分支和fixbug分支及tag命名规范</h2> <ul><li>feature分支命名规则：&quot;YYYY-MM-DD_version_X.X&quot;，如：&quot;2018-10-01_version_2.3&quot;。</li> <li>fixbug分支命名规则：&quot;YYYY-MM-DD_fixbug_bugname&quot;，如： &quot;2018-10-01_fixbug_arrange_course&quot;。</li> <li>tag 命名规则： &quot;prefix_YYYY-MM-DD_version_X.X_index&quot;，如： &quot;prod_2018-07-12_version_1.0_1&quot;。prefix可能为prod(生产环境)、pre(预发布环境)、fixbug(紧急bug修复)</li></ul> <h2 id="开发流程"><a href="#开发流程" aria-hidden="true" class="header-anchor">#</a> 开发流程</h2> <ol><li><p>切换到<code>master</code>主干，拉取最新代码</p> <ul><li>命令行：</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> pull origin master
+</code></pre></div><ul><li>SourceTree：</li></ul> <p><a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e7eb6a8f93195?w=903&h=477&f=png&s=78470"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e7eb6a8f93195?w=903&h=477&f=png&s=78470" alt></a></p></li> <li><p>从master拉取创建feature分支</p> <ul><li>命令行：</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>// 例如当前需要开发crm2.3版本
+<span class="token function">git</span> checkout -b 2018-10-01_version2.3
+
+// 开发完成后提交到历史版本
+<span class="token function">git</span> add <span class="token keyword">.</span>
+<span class="token function">git</span> commit -m <span class="token string">'提交信息说明'</span>
+</code></pre></div><ul><li>SourceTree：<br>
+创建并切换到功能分支<br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e7ef26e828e5d?w=1352&h=412&f=png&s=121460"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e7ef26e828e5d?w=1352&h=412&f=png&s=121460" alt></a><br>
+开发完成后提交到历史版本<br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e7f676b50d620?w=1234&h=396&f=png&s=100036"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e7f676b50d620?w=1234&h=396&f=png&s=100036" alt></a><br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e7f8d1993031e?w=1352&h=672&f=png&s=82698"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e7f8d1993031e?w=1352&h=672&f=png&s=82698" alt></a></li></ul></li> <li><p>开发完功能后，合并到开发环境， 合并完后记得切换回个人分支，预防直接修改<code>dev</code>分支代码</p> <ul><li>命令行：</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>// 切换到dev开发环境
+<span class="token function">git</span> checkout dev
+
+// 拉取最新的dev分支代码
+<span class="token function">git</span> pull origin dev
+
+// 合并2018-10-01_version_2.3分支到开发环境， 如果在合并过程中出现冲突，需要解决提交才进行下一步操作
+<span class="token function">git</span> merge --no-ff 2018-10-01_version_2.3
+
+
+// 提交到远程dev
+<span class="token function">git</span> push origin dev
+
+// 切换回2018-10-01_version_2.3分支
+<span class="token function">git</span> checkout 2018-10-01_version_2.3
+</code></pre></div><ul><li>SourceTree：<br>
+切换到dev分支，获取远程最新代码<br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e7f2dc5f1a861?w=1157&h=458&f=png&s=110597"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e7f2dc5f1a861?w=1157&h=458&f=png&s=110597" alt></a><br>
+合并功能分支代码到dev分支<br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e7fd8825da4c5?w=1343&h=389&f=png&s=123520"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e7fd8825da4c5?w=1343&h=389&f=png&s=123520" alt></a><br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e8001ac557f80?w=1346&h=685&f=png&s=160175"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e8001ac557f80?w=1346&h=685&f=png&s=160175" alt></a><br>
+如果合并过程中发生冲突，需要解决提交后才进行下一步操作，<a href="#%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81">冲突解决方案</a><br>
+推送dev到远程库<br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e804c475310a0?w=1350&h=415&f=png&s=127402"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e804c475310a0?w=1350&h=415&f=png&s=127402" alt></a></li></ul></li> <li><p>开发环境联调测试没有问题后，提交到测试环境，合并完后记得切换回个人分支，预防直接修改<code>test</code>分支代码(测试人员介入测试)</p> <ul><li>命令行：</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>// 切换到test测试环境
+<span class="token function">git</span> checkout <span class="token function">test</span>
+
+// 拉取最新的test分支代码
+<span class="token function">git</span> pull origin <span class="token function">test</span>
+
+// 合并2018-10-01_version_2.3分支到开发环境
+<span class="token function">git</span> merge --no-ff 2018-10-01_version_2.3
+
+// 提交到远程dev
+<span class="token function">git</span> push origin <span class="token function">test</span>
+
+// 切换回2018-10-01_version_2.3分支
+<span class="token function">git</span> checkout 2018-10-01_version_2.3
+</code></pre></div><ul><li>SourceTree：<br>
+切换到test分支，获取远程最新代码<br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e8090831f904c?w=1343&h=494&f=png&s=152238"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e8090831f904c?w=1343&h=494&f=png&s=152238" alt></a><br>
+合并功能分支到test分支<br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e80ad802a843b?w=1358&h=388&f=png&s=120936"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e80ad802a843b?w=1358&h=388&f=png&s=120936" alt></a><br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e80c99425348d?w=1351&h=689&f=png&s=163342"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e80c99425348d?w=1351&h=689&f=png&s=163342" alt></a><br>
+如果合并过程中发生冲突，需要解决提交后才进行下一步操作，<a href="#%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81">冲突解决方案</a><br>
+推送test到远程库<br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e80f6dba8d68e?w=1403&h=401&f=png&s=128212"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e80f6dba8d68e?w=1403&h=401&f=png&s=128212" alt></a></li></ul></li> <li><p>测试环境测试人员确定没有问题，可以上pre预发布环境，合并完后记得切换回个人分支，预防直接修改<code>pre</code>分支代码(测试人员介入测试)</p> <ul><li>命令行：</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>// 切换到pre测试环境
+<span class="token function">git</span> checkout pre
+
+// 拉取最新的pre分支代码
+<span class="token function">git</span> pull origin pre
+
+// 合并2018-10-01_version_2.3分支到开发环境
+<span class="token function">git</span> merge --no-ff 2018-10-01_version_2.3
+
+// 提交到远程pre
+<span class="token function">git</span> push origin pre
+
+// 打版本tag，提交到远程库<span class="token punctuation">(</span>tag名称规则：打tag日期+功能版本+索引值<span class="token punctuation">)</span>
+<span class="token function">git</span> tag pre_2018-10-01_version_2.3_1 -m <span class="token string">'crm v2.3相关功能开发'</span>
+<span class="token function">git</span> push origin pre_2018-10-01_version_2.3_1
+
+// 切换回2018-10-01_crm_version_2.3分支
+<span class="token function">git</span> checkout 2018-10-01_version_2.3
+</code></pre></div><ul><li>SourceTree：<br>
+可以参看上面将功能分支到dev和test分支流程，不过这个步骤添加了打版本tag环节<br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e81742581c114?w=1349&h=493&f=png&s=143454"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e81742581c114?w=1349&h=493&f=png&s=143454" alt></a><br>
+如果需要将tag推送到远程库可以执行以下操作<br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e818c8c28acc5?w=1357&h=638&f=png&s=171229"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e818c8c28acc5?w=1357&h=638&f=png&s=171229" alt></a></li></ul></li> <li><p>预发布测试没有问题而且接收到测试人员的上线通知邮件，提交到生产环境</p> <ul><li>命令行：</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>// 切换到pre测试环境
+<span class="token function">git</span> checkout master
+
+// 拉取最新的pre分支代码
+<span class="token function">git</span> pull origin master
+
+// 合并20181001-crm-2.3分支到开发环境
+<span class="token function">git</span> merge --no-ff 2018-10-01_version_2.3
+
+// 提交到远程master
+<span class="token function">git</span> push origin master
+
+// 打tag，提交到远程库<span class="token punctuation">(</span>tag名称规则：打tag日期+功能版本+索引值<span class="token punctuation">)</span>
+<span class="token function">git</span> tag prod_2018-10-01_version_2.3_1 -m <span class="token string">'crm v2.3相关功能开发'</span>
+<span class="token function">git</span> push origin prod_2018-10-01_version_2.3_1
+
+// 切换回20181001-crm-2.3分支
+<span class="token function">git</span> checkout 2018-10-01_version_2.3_1
+</code></pre></div><ul><li>SourceTree：<br>
+可以参看上面将功能分支到pre分支流程<br></li></ul></li></ol> <h2 id="解决冲突"><a href="#解决冲突" aria-hidden="true" class="header-anchor">#</a> 解决冲突</h2> <p>以下操作主要针对通过Git命令行解决冲突，SourceTree解决冲突方案可以参看<a href="https://zhicaizhu123.github.io/detail/sourcetree/#%E5%86%B2%E7%AA%81%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F" target="_blank" rel="noopener noreferrer">SourceTree冲突和解决方式<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <ul><li><p>场景一：两个或多个开发人员修改了同一行代码，<code>git merge</code>合并出现错误如图所示<br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/20/167ca71b2cff20fe?w=567&h=58&f=png&s=6627"><img src="https://user-gold-cdn.xitu.io/2018/12/20/167ca71b2cff20fe?w=567&h=58&f=png&s=6627" alt></a><br>
+解决办法：<br>
+与相关的小伙伴协商修改，处理后<code>git add</code>，<code>git commit</code>, <code>git push</code></p></li> <li><p>场景二：<code>git push</code> 推送代码到远程库时，远程库最新提交和你试图推送的提交有冲突，其实这个也是相当于把本地库合并到远程库的操作，错误信息如图所示<br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/20/167ca77274629671?w=573&h=136&f=png&s=17070"><img src="https://user-gold-cdn.xitu.io/2018/12/20/167ca77274629671?w=573&h=136&f=png&s=17070" alt></a><br>
+解决办法：<br>
+先使用<code>git pull origin branch_name</code>（git fetch + git merge）         把最新的代码拉取下来（先获取后合并，所以出现的错误信息和<code>git merge</code> 的一样），解决冲突<br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/20/167ca7aec0119105?w=564&h=177&f=png&s=18904"><img src="https://user-gold-cdn.xitu.io/2018/12/20/167ca7aec0119105?w=564&h=177&f=png&s=18904" alt></a><br>
+处理后使用<code>git add</code>, <code>git commit</code>, <code>git push</code>再次推送</p></li> <li><p>场景三： 树冲突，文件删除或者重命名，有一个file.js文件，小伙伴A把文件改名为fileA.js，小伙伴B把同一个文件改名为fileB.js，那么小伙伴B将这两个commit合并时，会产生冲突，错误如图所示<br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/20/167ca875175acd0c?w=570&h=122&f=png&s=17032"><img src="https://user-gold-cdn.xitu.io/2018/12/20/167ca875175acd0c?w=570&h=122&f=png&s=17032" alt></a><br>
+解决办法： 与小伙伴协商取舍，假如最终确定使用小伙伴B的文件名</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 删除fileA.js</span>
+<span class="token function">git</span> <span class="token function">rm</span> -r fileA.js
+
+<span class="token comment"># 删除file.js</span>
+<span class="token function">git</span> <span class="token function">rm</span> -r file.js
+
+<span class="token comment"># 将fileB.js加入到暂存区</span>
+<span class="token function">git</span> add fileB.js
+
+<span class="token comment"># 提交</span>
+<span class="token function">git</span> commit -m <span class="token string">'说明'</span>
+
+<span class="token comment"># 推送</span>
+<span class="token function">git</span> push origin branch_name
+    ```
+
+</code></pre></div></li></ul> <h2 id="减少代码冲突的措施"><a href="#减少代码冲突的措施" aria-hidden="true" class="header-anchor">#</a> 减少代码冲突的措施</h2> <ul><li>容易产生冲突的操作方式
+<ul><li>在环境分支（<code>master</code>, <code>pre</code>, <code>test</code>, <code>dev</code>）直接修改代码</li> <li>多个人同时操作了同一个文件</li> <li>一个人很长时间没有提交代码</li> <li>修改之前没有更新最新代码</li> <li>擅自修改其它小伙伴的代码</li></ul></li> <li>减少冲突的操作方式
+<ul><li>避免在环境分支（<code>master</code>, <code>pre</code>, <code>test</code>, <code>dev</code>）修改代码</li> <li>先pull再修改，修改完需要提交add, commit, pull, push</li> <li>确保自己正在修改的文件是最新版本</li> <li>各自开发各自的功能模块</li> <li>下班前提交代码，上班时拉取最新代码</li> <li>不要擅自修改其它小伙伴的代码</li></ul></li></ul> <h2 id="撤销和回滚"><a href="#撤销和回滚" aria-hidden="true" class="header-anchor">#</a> 撤销和回滚</h2> <p>以下操作主要针对通过Git命令行撤销回滚，SourceTree撤销和回滚可以参看<a href="https://zhicaizhu123.github.io/detail/sourcetree/#%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80" target="_blank" rel="noopener noreferrer">SourceTree版本回退<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <ul><li>本地仓库：
+<ul><li><p>场景一：文件被修改了，但未执行<code>git add</code>操作（未暂存）</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 撤销单个文件修改</span>
+<span class="token function">git</span> checkout <span class="token operator">&lt;</span>filename<span class="token operator">&gt;</span>
+<span class="token comment"># 撤销全部文件修改</span>
+<span class="token function">git</span> checkout <span class="token keyword">.</span>
+</code></pre></div></li> <li><p>场景二：同时对多个文件执行了<code>git add</code>操作，但本次只想提交其中一部分文件（已暂存）</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 取消单个文件暂存</span>
+<span class="token function">git</span> reset HEAD <span class="token operator">&lt;</span>filename<span class="token operator">&gt;</span>
+<span class="token comment"># 取消全部文件暂存</span>
+<span class="token function">git</span> reset HEAD <span class="token keyword">.</span>
+</code></pre></div></li> <li><p>场景三：文件执行了<code>git add</code>操作，但想撤销对其的修改</p> <div class="language- extra-class"><pre class="language-text"><code># 取消暂存
+git reset HEAD &lt;filename&gt;
+# 撤销修改
+git checkout &lt;filename&gt;
+</code></pre></div></li> <li><p>场景四：修改的文件已被<code>commit</code>，但想再次修改不再产生新的commit</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 修改最后一次提交 </span>
+<span class="token function">git</span> add <span class="token operator">&lt;</span>filename<span class="token operator">&gt;</span>
+<span class="token function">git</span> commit --amend -m <span class="token string">&quot;描述说明&quot;</span>
+</code></pre></div></li> <li><p>场景五：已在本地进行了多次<code>git commit</code>操作，现在想撤销到其中某次commit</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> reset <span class="token punctuation">[</span>--hard<span class="token operator">|</span>soft<span class="token operator">|</span>mixed<span class="token operator">|</span>merge<span class="token operator">|</span>keep<span class="token punctuation">]</span> <span class="token punctuation">[</span>commit<span class="token operator">|</span>HEAD<span class="token punctuation">]</span>
+</code></pre></div><p>--hard：重设暂存区和工作区，从commit以来在工作区中的任何改变都被丢弃，并把HEAD指向commit，彻底回退到某个版本，本地的源码也会变为上一个版本的内容（三思而后行）<br>
+--soft： 暂存区和工作区中的内容不作任何改变，仅仅把HEAD指向commit，退到某个版本，只回退了commit的信息。如果还要提交，直接commit即可<br>
+--mixed：仅重设暂存区，但是不重设工作区。这个模式是默认模式。回退到某个版本，只保留源码，回退commit和add信息<br>
+reset常用示例</p> <ul><li><p>回退add操作</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 撤销暂存区，不改变工作区</span>
+<span class="token function">git</span> reset HEAD <span class="token operator">&lt;</span>filename<span class="token operator">&gt;</span>
+<span class="token function">git</span> reset HEAD <span class="token keyword">.</span>
+</code></pre></div><p>说明：可以将文件从“已暂存”状态（Index区）回滚到初始状态。</p></li> <li><p>回退最后指定版本的提交</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 回退最后一次提交</span>
+<span class="token comment"># hard方式</span>
+<span class="token function">git</span> reset --hard <span class="token operator">&lt;</span>commitId<span class="token operator">|</span>HEAD<span class="token operator">&gt;</span>
+
+<span class="token comment"># soft方式</span>
+<span class="token function">git</span> reset --soft <span class="token operator">&lt;</span>commitId<span class="token operator">|</span>HEAD<span class="token operator">&gt;</span>
+
+<span class="token comment"># mixed方式</span>
+get reset <span class="token operator">&lt;</span>commitId<span class="token operator">|</span>HEAD<span class="token operator">&gt;</span>
+</code></pre></div></li></ul></li></ul></li> <li>远程仓库：
+注意：对远程仓库做回滚操作是有风险的，需提前做好备份和通知其他小伙伴！
+<ul><li><p>通过tag回滚。<br>
+如果你每次更新线上，都会打版本tag，你可以很快的处理这种的情况（所以这是为什么生产环境和预发布环境都要打版本tag），直接在jenkins上指定发布需要发布的tag</p></li> <li><p>回滚到指定版本（不是迫不得已不要使用<code>git reset</code> 回滚远程库版本）</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> revert <span class="token operator">&lt;</span>commitId<span class="token operator">|</span>HEAD<span class="token operator">&gt;</span>
+<span class="token function">git</span> push origin <span class="token operator">&lt;</span>originBranchname<span class="token operator">&gt;</span>
+</code></pre></div><p><code>git reset</code> 和 <code>get revert</code>的区别：</p> <ol><li><code>git revert</code>是用一次新的commit来回滚之前的commit，<code>git reset</code>是直接删除指定的commit</li> <li>在回滚这一操作上看，效果差不多。但是在日后继续merge以前的老版本时有区别。因为<code>git revert</code>是用一次逆向的commit“中和”之前的提交，因此日后合并老的branch时，导致这部分改变不会再次出现，但是<code>git reset</code>是之间把某些commit在某个branch上删除，因而和老的branch再次merge时，这些被回滚的commit应该还会被引入。</li> <li><code>git reset</code> 是把HEAD向后移动了一下，而git revert是HEAD继续前进，只是新的commit的内容和要revert的内容正好相反，能够抵消要被revert的内容。</li></ol></li></ul></li></ul> <h2 id="开发中突发紧急任务处理"><a href="#开发中突发紧急任务处理" aria-hidden="true" class="header-anchor">#</a> 开发中突发紧急任务处理</h2> <p>经常有这样的事情发生，当你正在进行项目中某一部分的工作，里面的东西处于一个比较杂乱的状态，而你想转到其他分支上进行一些工作。问题是，你不想提交进行了一半的工作，否则以后你无法回到这个工作点。解决这个问题的办法就是<code>git stash</code>命令。<br>
+“贮藏”可以获取你工作目录的中间状态——也就是你修改过的被追踪的文件和暂存的变更——并将它保存到一个未完结变更的堆栈中，随时可以重新应用。</p> <p>以下操作主要针对通过Git命令行撤销回滚，SourceTree撤销和回滚可以参看<a href="https://zhicaizhu123.github.io/detail/sourcetree/#%E5%BC%80%E5%8F%91%E4%B8%AD%E7%AA%81%E5%8F%91%E7%B4%A7%E6%80%A5%E4%BB%BB%E5%8A%A1%E5%A4%84%E7%90%86" target="_blank" rel="noopener noreferrer">SourceTree开发中突发紧急任务处理<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 贮藏当前工作点</span>
+<span class="token function">git</span> stash
+
+<span class="token comment"># 应用最近一次的贮藏</span>
+<span class="token function">git</span> stash apply
+
+<span class="token comment"># 查看现有的贮藏</span>
+<span class="token function">git</span> stash list
+<span class="token comment"># stash@{0}: WIP on master: 049d078 added the index file</span>
+<span class="token comment"># stash@{1}: WIP on master: c264051 Revert &quot;added file_size&quot;</span>
+<span class="token comment"># stash@{2}: WIP on master: 21d80a5 added number to log</span>
+
+<span class="token comment"># 应用更早的贮藏</span>
+<span class="token function">git</span> stash apply stash@<span class="token punctuation">{</span>1<span class="token punctuation">}</span>
+
+<span class="token comment"># 删除贮藏</span>
+<span class="token function">git</span> stash drop stash@<span class="token punctuation">{</span>1<span class="token punctuation">}</span>
+
+<span class="token comment"># 应用最近一次贮藏同是删除这一次的贮藏</span>
+<span class="token function">git</span> stash pop
+</code></pre></div><h2 id="保留分支及tag规则"><a href="#保留分支及tag规则" aria-hidden="true" class="header-anchor">#</a> 保留分支及tag规则</h2> <ul><li>保留分支的规则（完成开发后删除相关的feature分支）：<br>
+除了环境分支（<code>master</code>, <code>pre</code>, <code>test</code>, <code>dev</code>）其它feture分支，如果开发完已经上线确保没有问题后了，应该把它删除。</li> <li>保留tag规则(建议保留2个大版本)：<br>
+我们自己采用gitlab来搭建自己的中央版本库，如果中央版本库tag数量会变得非常多，当tag多了以后，整个网站都呈现出不是特别正常的样子，所以，就需要保持较少的tag列表，让网站保持比较高的性能。所以建议tag保留规则应该是只保留两个大版本，其它在这两个版本的tag可以删除，录入又version_1.x.x, version_2.x.x, version_3.x.x三个大版本的tag，我们只保留最新的两个大版本tag version_2.x.x, version_3.x.x，删除tag version_1.x.x
+<ul><li><p>删除远程库的tag</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 首先就是找到远程库要删除的tags列表</span>
+<span class="token function">git</span> show-ref --tag
+
+<span class="token comment"># 删除远程库tag</span>
+<span class="token function">git</span> push origin :<span class="token operator">&lt;</span>tag<span class="token operator">&gt;</span>
+
+<span class="token comment"># 批量删除符合条件远程库tags，例如删除pre预发布环境版本打得version_1.x.x的tag，其它环境的tag以此类推</span>
+<span class="token function">git</span> show-ref --tag <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'/pre_\S*_version_1(\.[0-9]){0,}_\d+$/ {print &quot;:&quot; <span class="token variable">$2</span>}'</span> <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token function">git</span> push origin
+</code></pre></div></li> <li><p>删除本地库的tag</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 产看本地库tags列表</span>
+<span class="token function">git</span> tag
+
+<span class="token comment"># 删除本地库tag</span>
+<span class="token function">git</span> tag -d <span class="token operator">&lt;</span>tag<span class="token operator">&gt;</span>
+
+<span class="token comment"># 批量删除符合条件的本地库tags，例如删除pre预发布环境版本打得version_1.x.x的tag，其它环境的tag以此类推</span>
+<span class="token function">git</span> tag -l<span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'/pre_\S*_version_1(\.[0-9]){0,}_\d+$/ {print  <span class="token variable">$1</span>}'</span> <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token function">git</span> tag -d
+</code></pre></div></li></ul></li></ul> <h2 id="每天开发前先拉取，每天下班前先上传到中央仓库"><a href="#每天开发前先拉取，每天下班前先上传到中央仓库" aria-hidden="true" class="header-anchor">#</a> 每天开发前先拉取，每天下班前先上传到中央仓库</h2> <p>在软件团队中，有一个不成文的习惯，团队成员在每天晚上下班前，先将一天工作内容推送到远程仓库，早上上班时先从中央仓库拉取项目更新。由于项目的每个成员都可以通过版本历史记录查看其它成员的工作内容和项目进展，因此也就形成了团队内部工作透明的机制。</p> <ul><li><p>开发前拉取<br>
+命令行：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> pull origin <span class="token operator">&lt;</span>branch_name<span class="token operator">&gt;</span>
+</code></pre></div><p>SourceTree：<br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e82cc236285f2?w=1365&h=409&f=png&s=127620"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e82cc236285f2?w=1365&h=409&f=png&s=127620" alt></a></p></li> <li><p>下班前推送到远程库<br>
+命令行：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> add <span class="token keyword">.</span>
+<span class="token function">git</span> commit -m <span class="token string">'描述说明'</span>
+<span class="token function">git</span> push origin <span class="token operator">&lt;</span>branch_name<span class="token operator">&gt;</span>
+</code></pre></div><p>SourceTree：<br>
+确定修改已经提交到历史库，然后推送到远程分支<br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e82d0c4a5431d?w=1358&h=378&f=png&s=117646"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e82d0c4a5431d?w=1358&h=378&f=png&s=117646" alt></a></p></li></ul> <h2 id="错误提交-合并-推送的挽救方法"><a href="#错误提交-合并-推送的挽救方法" aria-hidden="true" class="header-anchor">#</a> 错误提交/合并/推送的挽救方法</h2> <ul><li>场景一： 未将修改内容提交到错误的分支
+<ul><li><p>命令行：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 将修改的代码暂存到stash</span>
+<span class="token function">git</span> stash
+
+<span class="token comment"># 切换到正确的分支</span>
+<span class="token function">git</span> checkout <span class="token operator">&lt;</span>target_branch_name<span class="token operator">&gt;</span> 
+
+<span class="token comment"># 从stash中取出暂存的代码修改</span>
+<span class="token function">git</span> stash pop
+
+<span class="token comment"># 提交修改</span>
+<span class="token function">git</span> add <span class="token keyword">.</span>
+<span class="token function">git</span> commit -m <span class="token string">'提交信息说明'</span>
+</code></pre></div></li> <li><p>SourceTree：<br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e8640a2c02117?w=1349&h=385&f=png&s=132715"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e8640a2c02117?w=1349&h=385&f=png&s=132715" alt></a><br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e8664c2712bfd?w=1360&h=653&f=png&s=188496"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e8664c2712bfd?w=1360&h=653&f=png&s=188496" alt></a><br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e86fcbe520cb8?w=1357&h=446&f=png&s=135996"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e86fcbe520cb8?w=1357&h=446&f=png&s=135996" alt></a></p></li></ul></li> <li>场景二： 已将修改内容提交/合并到错误分支， 但未提交到远程库
+<ul><li>命令行：<div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 撤销回退修改( 混合合并：仅重设暂存区，但是不重设工作区。这个模式是默认模式。回退到某个版本，只保留源码，回退commit和add信息 )</span>
+<span class="token function">git</span> reset <span class="token operator">&lt;</span>commitId<span class="token operator">&gt;</span>
+
+<span class="token comment"># 将修改的代码暂存到stash</span>
+<span class="token function">git</span> stash
+
+<span class="token comment"># 切换到正确的分支</span>
+<span class="token function">git</span> checkout <span class="token operator">&lt;</span>target_branch_name<span class="token operator">&gt;</span> 
+
+<span class="token comment"># 从stash中取出暂存的代码修改</span>
+<span class="token function">git</span> stash pop
+
+<span class="token comment"># 提交修改</span>
+<span class="token function">git</span> add <span class="token keyword">.</span>
+<span class="token function">git</span> commit -m <span class="token string">'提交信息说明'</span>
+</code></pre></div></li> <li>SourceTree：<br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e86ad291cc2b4?w=1356&h=586&f=png&s=180730"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e86ad291cc2b4?w=1356&h=586&f=png&s=180730" alt></a><br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e86b696f57289?w=1348&h=321&f=png&s=112959"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e86b696f57289?w=1348&h=321&f=png&s=112959" alt></a><br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e86c2d6c68e3b?w=1351&h=391&f=png&s=124746"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e86c2d6c68e3b?w=1351&h=391&f=png&s=124746" alt></a><br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e86e451dce867?w=1366&h=642&f=png&s=189469"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e86e451dce867?w=1366&h=642&f=png&s=189469" alt></a><br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e86fe2f81c26d?w=1357&h=446&f=png&s=135996"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e86fe2f81c26d?w=1357&h=446&f=png&s=135996" alt></a></li></ul></li> <li>场景三： 已经修改的内容提交到错误分支的远程库
+<ul><li>命令行：<div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 新建一个临时分支保存当前修改状态</span>
+<span class="token function">git</span> checkout -b <span class="token operator">&lt;</span>temp_branch<span class="token operator">&gt;</span>
+
+<span class="token comment"># 撤销回退修改</span>
+<span class="token function">git</span> reset <span class="token operator">&lt;</span>commitId<span class="token operator">&gt;</span>
+
+<span class="token comment"># 将修改的代码暂存到stash</span>
+<span class="token function">git</span> stash
+
+<span class="token comment"># 切换回错误分支</span>
+<span class="token function">git</span> checkout -b <span class="token operator">&lt;</span>src_branch_name<span class="token operator">&gt;</span>
+
+<span class="token comment"># 撤销回退修改</span>
+<span class="token function">git</span> revert <span class="token operator">&lt;</span>commitId<span class="token operator">&gt;</span>
+
+<span class="token comment"># 推送到到远程库</span>
+<span class="token function">git</span> push origin <span class="token operator">&lt;</span>branch_name<span class="token operator">&gt;</span>
+
+<span class="token comment"># 切换到正确的分支</span>
+<span class="token function">git</span> checkout <span class="token operator">&lt;</span>target_branch_name<span class="token operator">&gt;</span>
+
+<span class="token comment"># 从stash中取出暂存的代码修改</span>
+<span class="token function">git</span> stash pop
+
+<span class="token comment"># 合并成功后推送到远程库</span>
+<span class="token function">git</span> push origin <span class="token operator">&lt;</span>target_branch_name<span class="token operator">&gt;</span>
+
+<span class="token comment"># 合并成功后删除临时分支</span>
+<span class="token function">git</span> branch -d <span class="token operator">&lt;</span>temp_branch<span class="token operator">&gt;</span>
+</code></pre></div></li> <li>SourceTree：<br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e8737316043ae?w=1352&h=434&f=png&s=72886"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e8737316043ae?w=1352&h=434&f=png&s=72886" alt></a><br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e884a3acf9d2a?w=1348&h=475&f=png&s=159258"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e884a3acf9d2a?w=1348&h=475&f=png&s=159258" alt></a><br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e884fcd95d1e6?w=1356&h=347&f=png&s=120585"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e884fcd95d1e6?w=1356&h=347&f=png&s=120585" alt></a><br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e885ad099bc12?w=1352&h=414&f=png&s=131588"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e885ad099bc12?w=1352&h=414&f=png&s=131588" alt></a><br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e874ee501aa4f?w=1349&h=568&f=png&s=176968"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e874ee501aa4f?w=1349&h=568&f=png&s=176968" alt></a><br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e8882fa1c31c5?w=1357&h=681&f=png&s=193366"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e8882fa1c31c5?w=1357&h=681&f=png&s=193366" alt></a><br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e888e7d22a9f8?w=1360&h=506&f=png&s=146960"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e888e7d22a9f8?w=1360&h=506&f=png&s=146960" alt></a><br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e889a5ff98c08?w=1360&h=506&f=png&s=146960"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e889a5ff98c08?w=1360&h=506&f=png&s=146960" alt></a><br> <a data-fancybox title href="https://user-gold-cdn.xitu.io/2018/12/26/167e88a22eb7c0fd?w=1338&h=703&f=png&s=186601"><img src="https://user-gold-cdn.xitu.io/2018/12/26/167e88a22eb7c0fd?w=1338&h=703&f=png&s=186601" alt></a></li></ul></li></ul></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.a9c24781.js" defer></script><script src="/assets/js/7.ad009bf5.js" defer></script>
+  </body>
+</html>
